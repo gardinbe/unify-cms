@@ -1,0 +1,24 @@
+.async-component {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	overflow: auto;
+	//TODO: not ideal
+}
+
+.async-component-loader {
+	&.v {
+		&-leave-active {
+			transition: opacity $anim-slow;
+		}
+
+		&-leave-to {
+			opacity: 0;
+		}
+
+		&-leave-from {
+			opacity: 1;
+		}
+	}
+}

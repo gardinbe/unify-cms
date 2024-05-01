@@ -1,0 +1,220 @@
+:root {
+	--fallback-image-color: #{$fallback-image-color};
+}
+
+body {
+	position: relative;
+	font-family: Inter, sans-serif;
+	word-break: break-word;
+	@include font-size(1.1rem);
+
+	display: flex;
+	flex-direction: column;
+
+	min-height: 100vh;
+	min-height: 100dvh;
+	height: 100vh;
+	height: 100dvh;
+
+	color: $color-primary;
+	background-color: $bg-primary;
+
+	::selection {
+		background-color: $bg-secondary;
+	}
+}
+
+@media (pointer: fine) {
+	::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: $bg-primary-l-2;
+
+		&:hover {
+			background: $bg-primary-l-3;
+		}
+	}
+
+	::-webkit-scrollbar-track,
+	::-webkit-scrollbar-corner {
+		background: $bg-primary-l-1;
+	}
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	overflow: auto;
+}
+
+section {
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+hgroup,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 1.5rem;
+}
+
+hgroup {
+	:last-child {
+		margin-bottom: unset;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 0.4rem;
+	}
+
+	p {
+		line-height: 1.2;
+		font-weight: 300;
+		color: $color-tertiary;
+
+		&--lg {
+			@include font-size(1.35rem);
+		}
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
+}
+
+legend {
+	@include font-size(1.6rem);
+	font-weight: 500;
+	margin-bottom: 1rem;
+}
+
+p {
+	&:last-child {
+		margin-bottom: unset;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $color-link;
+
+	@include hover-active-swap-focus-visible {
+		text-decoration: underline;
+		color: $color-link-hover;
+	}
+}
+
+button {
+	appearance: none;
+	border: unset;
+	background-color: unset;
+	padding: unset;
+	cursor: pointer;
+}
+
+img {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+menu {
+	margin: unset;
+	padding: unset;
+}
+
+fieldset {
+	margin-top: $spacing-md;
+	margin-bottom: $spacing-md;
+}
+
+label {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	p {
+		color: $color-secondary;
+		@include font-size(0.9rem);
+	}
+}
+
+label,
+input,
+textarea,
+select {
+	//TODO: this will fuck up mobile, please fix
+	width: 300px;
+}
+
+input,
+textarea,
+select {
+	outline: unset;
+	padding: 8px 10px;
+	border: unset;
+	height: 2.5rem;
+
+	color: $bg-primary;
+
+	background-color: white;
+
+	border-radius: $radius-xs;
+
+	&:focus-within {
+		outline: unset;
+	}
+
+	&:disabled {
+		background-color: #999;
+		color: $bg-primary-d-1;
+	}
+
+	&::placeholder {
+		color: $bg-primary-l-3;
+	}
+
+	&::selection {
+		background-color: rgba($bg-primary, 0.3);
+	}
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	$size: 1.5rem;
+	width: $size;
+	height: $size;
+}
+
+textarea {
+	//TODO: this will fuck up mobile, please fix
+	width: 800px;
+	height: 300px;
+}
+
+select {
+	cursor: pointer;
+
+	&:has(option:checked[value=""]) {
+		color: $bg-primary-l-3;
+	}
+}

@@ -1,0 +1,24 @@
+.secondary-text {
+	color: $color-secondary;
+}
+
+.field-group {
+	display: flex;
+	align-items: flex-end;
+	gap: $spacing-sm;
+
+	&:not(:first-of-type) {
+		margin-top: $spacing-md;
+	}
+
+	&:not(:last-of-type) {
+		margin-bottom: $spacing-md;
+	}
+}
+
+.form-actions {
+	display: flex;
+	gap: $spacing-sm;
+	margin-top: $spacing-lg;
+	margin-bottom: $spacing-lg;
+}

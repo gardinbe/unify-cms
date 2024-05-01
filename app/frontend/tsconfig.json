@@ -1,0 +1,36 @@
+{
+	"extends": "../../tsconfig.types.json",
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"noEmit": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"isolatedModules": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"target": "ESNext",
+		"types": [
+			"vite/client",
+			"./src/shims.vue.d.ts"
+		],
+		"paths": {
+			"~/*": [
+				"./src/*"
+			],
+			"~shared/*": [
+				"../shared/*"
+			],
+			"~backend/*": [
+				"../backend/*"
+			]
+		}
+	},
+	"include": [
+		"**/*.ts",
+		"**/*.vue",
+		"../shared/**/*.ts",
+		"vite.config.ts",
+		".eslintrc.cjs"
+	]
+}

@@ -1,0 +1,91 @@
+@use "sass:map";
+
+// miscellaneous
+
+$assets-path: "/assets";
+
+$font-weights: (
+	MicroLine: 50,
+	HairLine: 100,
+	Thin: 150,
+	UltraLight: 200,
+	ExtraLight: 250,
+	Light: 300,
+	SemiLight: 350,
+	Regular: 400,
+	Book: 450,
+	Medium: 500,
+	550: 550,
+	DemiBold: 600,
+	SemiBold: 650,
+	Bold: 700,
+	Heavy: 750,
+	ExtraBold: 800,
+	UltraBold: 850,
+	Black: 900,
+	ExtraBlack: 950,
+	UltraBlack: 1000
+);
+
+// bootstrap custom vars
+
+$grid-gutter-width: 40px;
+$container-padding-x: 40px;
+
+// colors
+
+$color-primary: rgb(248, 246, 213);
+$color-primary-d-1: rgb(211, 209, 181);
+$color-secondary: rgb(211, 211, 199);
+$color-link: rgb(105, 195, 201);
+$color-link-hover: rgb(167, 245, 250);
+$color-tertiary: #eed9ff;
+$bg-primary-l-3: rgb(104, 121, 132);
+$bg-primary-l-2: rgb(85, 101, 111);
+$bg-primary-l-1: rgb(59, 76, 87);
+$bg-primary: rgb(47, 61, 70);
+$bg-primary-d-1: rgb(40, 52, 59);
+$bg-primary-d-2: rgb(34, 44, 50);
+$bg-primary-d-3: rgb(25, 32, 37);
+$bg-secondary-l-3: rgb(55, 70, 79);
+$bg-secondary-l-2: rgb(48, 61, 69);
+$bg-secondary-l-1: rgb(34, 43, 49);
+$bg-secondary: rgb(24, 31, 35);
+$bg-secondary-d-1: rgb(11, 13, 16);
+
+$fallback-image-color: $bg-primary-l-1;
+
+$shadow: 0px 0px 40px -14px black;
+
+// spacings
+
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 20px;
+$spacing-lg: 30px;
+$spacing-xl: 50px;
+$spacing-xxl: 70px;
+
+// border radii
+
+$radius-xs: 0.5rem;
+$radius-sm: 0.75rem;
+$radius-md: 1rem;
+$radius-lg: 1.5rem;
+$radius-xl: 2rem;
+
+// animations
+
+$anim-speed-very-slow: 300ms;
+$anim-speed-slow: 150ms;
+$anim-speed: 100ms;
+$anim-speed-fast: 75ms;
+$anim-speed-very-fast: 50ms;
+
+$anim-primary-timing-fn: ease;
+
+$anim-very-slow: $anim-speed-very-slow $anim-primary-timing-fn;
+$anim-slow: $anim-speed-slow $anim-primary-timing-fn;
+$anim: $anim-speed $anim-primary-timing-fn;
+$anim-fast: $anim-speed-fast $anim-primary-timing-fn;
+$anim-very-fast: $anim-speed-very-fast $anim-primary-timing-fn;

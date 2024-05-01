@@ -1,0 +1,163 @@
+.nav {
+	$e: &;
+
+	position: relative;
+	z-index: 9999;
+
+	display: flex;
+	align-items: center;
+	gap: $spacing-lg;
+	height: 60px;
+	background-color: $bg-secondary;
+
+	transition: background-color $anim;
+
+	border-bottom: 1px solid $bg-secondary-d-1;
+
+	@include media-breakpoint-down(md) {
+		position: relative;
+		justify-content: space-between;
+	}
+
+	&[data-menu-open="true"] {
+		background-color: $bg-secondary-d-1;
+
+		#{$e} {
+			&__menu-btn {
+				.bar {
+					background-color: $color-primary-d-1;
+
+					&:nth-child(1) {
+						transform: translateY(-100%);
+						opacity: 0;
+					}
+
+					&:nth-child(2) {
+						transform: rotate(-45deg) scaleX(115%); //sqrt(2) is technically perfect, but looks weird
+					}
+
+					&:nth-child(3) {
+						transform: rotate(45deg) scaleX(115%);
+					}
+
+					&:nth-child(4) {
+						transform: translateY(100%);
+						opacity: 0;
+					}
+				}
+			}
+
+			&__menu {
+				@include media-breakpoint-down(md) {
+					transform: translateX(0);
+				}
+			}
+		}
+	}
+
+	&__logo {
+		display: flex;
+		align-items: center;
+		gap: 7px;
+		height: 100%;
+		text-decoration: unset;
+		padding: $spacing-sm;
+
+		img {
+			object-fit: contain;
+			display: flex;
+			height: 100%;
+		}
+
+		span {
+			color: $color-primary;
+			font-weight: bold;
+			@include font-size(1.5rem);
+		}
+	}
+
+	&__menu-btn {
+		position: relative;
+		display: none;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+
+		height: 100%;
+		width: 4rem;
+		$menu-btn-padding: 15px;
+		padding: $menu-btn-padding;
+
+		@include hover-active-swap-focus-within {
+			.bar {
+				background-color: $color-primary;
+			}
+		}
+
+		@include media-breakpoint-down(md) {
+			display: flex;
+		}
+
+		.bar {
+			$bar-height: 4px;
+
+			border-radius: 10px;
+			height: $bar-height;
+			width: 100%;
+
+			background-color: $color-primary;
+			transition:
+				background-color $anim-fast,
+				opacity $anim-fast,
+				transform $anim;
+
+			&:nth-child(3) {
+				position: absolute;
+				top: calc(50% - $bar-height * 0.5);
+				width: calc(100% - $menu-btn-padding * 2);
+			}
+		}
+	}
+
+	&__menu {
+		display: flex;
+		align-items: center;
+		gap: $spacing-sm;
+
+		@include media-breakpoint-down(md) {
+			position: absolute;
+			top: 100%;
+			width: 100%;
+			height: calc(100dvh - var(--nav-height));
+
+			flex-direction: column;
+			gap: unset;
+			background-color: $bg-secondary;
+
+			transform: translateX(-100%);
+			transition: transform $anim;
+		}
+
+		a {
+			text-decoration: unset;
+			text-align: center;
+			padding: 5px 10px;
+			color: $color-primary;
+
+			transition: background-color $anim;
+
+			&.router-link-active {
+				background-color: $bg-secondary-l-2;
+			}
+
+			@include hover-active-swap-focus-visible {
+				background-color: $bg-secondary-l-2;
+			}
+
+			@include media-breakpoint-down(md) {
+				padding: 15px;
+				width: 100%;
+			}
+		}
+	}
+}

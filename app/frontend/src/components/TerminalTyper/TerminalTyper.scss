@@ -1,0 +1,62 @@
+.terminal-typer {
+	&__wrapper {
+		position: relative;
+	}
+
+	&__chars {
+		.invisible {
+			visibility: hidden;
+		}
+
+		.visible,
+		.invisible {
+			span {
+				@keyframes FadeIn {
+					0% {
+						opacity: 0.6;
+					}
+					100% {
+						opacity: 1;
+					}
+				}
+
+				display: inline;
+
+				animation: FadeIn 80ms ease;
+			}
+		}
+	}
+
+	&__cursor {
+		position: absolute;
+		margin-left: 1px;
+
+		line-height: 0;
+
+		transition:
+			left 20ms ease,
+			top 20ms ease;
+
+		&[data-blinking="true"] {
+			@keyframes Blink {
+				0% {
+					opacity: 1;
+				}
+				40% {
+					opacity: 1;
+				}
+				50% {
+					opacity: 0;
+				}
+				90% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+
+			animation: Blink 1s infinite;
+		}
+	}
+}

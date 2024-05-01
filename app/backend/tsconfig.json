@@ -1,0 +1,34 @@
+{
+	"extends": "../../tsconfig.types.json",
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"noEmit": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"isolatedModules": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"target": "ESNext",
+		"types": [
+			"./env.d.ts"
+		],
+		"paths": {
+			"~/*": [
+				"./src/*"
+			],
+			"~shared/*": [
+				"../shared/*"
+			],
+			"~frontend/*": [
+				"../frontend/*"
+			]
+		}
+	},
+	"include": [
+		"**/*.ts",
+		"../shared/**/*.ts",
+		"rollup.config.ts",
+		".eslintrc.cjs"
+	]
+}

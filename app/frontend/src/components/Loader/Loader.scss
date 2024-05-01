@@ -1,0 +1,53 @@
+.loader-wrapper {
+	z-index: 999;
+	position: absolute;
+	inset: 0;
+
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	user-select: none;
+	background-color: $bg-secondary;
+	color: $color-primary;
+}
+
+.loader {
+	$size: 40px;
+	width: $size;
+	height: $size;
+
+	border-color: $color-primary;
+	border-width: 10px;
+	border-radius: 100%;
+	border-style: solid;
+	border-top-color: transparent;
+
+	animation: LoaderSpin 1.1s linear infinite;
+
+	@keyframes LoaderSpin {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+}
+
+.loader-fade-in {
+	&-enter-active {
+		transition: opacity $anim-very-slow;
+	}
+
+	&-enter-from {
+		opacity: 0;
+	}
+
+	&-enter-to {
+		opacity: 1;
+	}
+}

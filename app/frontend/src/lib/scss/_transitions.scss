@@ -1,0 +1,44 @@
+.fade {
+	&-enter-active,
+	&-leave-active {
+		transition: opacity $anim-very-slow;
+	}
+
+	&-enter-from,
+	&-leave-to {
+		opacity: 0;
+	}
+
+	&-enter-to,
+	&-leave-from {
+		opacity: 1;
+	}
+}
+
+.fade-in {
+	&-enter-active {
+		transition: opacity $anim-very-slow;
+	}
+
+	&-enter-from {
+		opacity: 0;
+	}
+
+	&-enter-to {
+		opacity: 1;
+	}
+}
+
+.fade-out {
+	&-leave-active {
+		transition: opacity $anim-very-slow;
+	}
+
+	&-leave-to {
+		opacity: 0;
+	}
+
+	&-leave-from {
+		opacity: 1;
+	}
+}

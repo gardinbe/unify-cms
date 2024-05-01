@@ -1,0 +1,54 @@
+@use "sass:map";
+
+$path: "#{$assets-path}/fonts/Inter";
+$name: "Inter";
+$prefix: "Inter";
+$faces: (
+	(
+		suffix: "Thin",
+		weight: map.get($font-weights, Thin)
+	),
+	(
+		suffix: "ExtraLight",
+		weight: map.get($font-weights, ExtraLight)
+	),
+	(
+		suffix: "Light",
+		weight: map.get($font-weights, Light)
+	),
+	(
+		suffix: "Regular",
+		weight: map.get($font-weights, Regular)
+	),
+	(
+		suffix: "Medium",
+		weight: map.get($font-weights, Medium)
+	),
+	(
+		suffix: "SemiBold",
+		weight: map.get($font-weights, SemiBold)
+	),
+	(
+		suffix: "Bold",
+		weight: map.get($font-weights, Bold)
+	),
+	(
+		suffix: "ExtraBold",
+		weight: map.get($font-weights, ExtraBold)
+	),
+	(
+		suffix: "Black",
+		weight: map.get($font-weights, Black)
+	)
+);
+
+@each $face in $faces {
+	@font-face {
+		font-family: $name;
+		font-display: fallback;
+		font-style: normal;
+		font-weight: map.get($face, weight);
+		$filename: "#{$prefix}-#{map.get($face, suffix)}";
+		src: url("#{$path}/ttf/#{$filename}.ttf") format("truetype");
+	}
+}
