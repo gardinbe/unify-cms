@@ -7,7 +7,8 @@ const { resolve } = require('path');
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   ignorePatterns: [
-    '**/dist/**/*'
+    '**/dist/**/*',
+    '**/build/**/*'
   ],
   root: true,
   env: {
@@ -33,7 +34,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
     parser: '@typescript-eslint/parser',
-    project: resolve(__dirname, 'tsconfig.types.json'),
+    project: resolve(__dirname, 'tsconfig.json'),
     ecmaFeatures: {
       jsx: true
     }
@@ -47,7 +48,7 @@ module.exports = {
     },
     'import/resolver': {
       typescript: {
-        project: resolve(__dirname, 'tsconfig.types.json'),
+        project: resolve(__dirname, 'tsconfig.json'),
         alwaysTryTypes: true //always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
       }
     }

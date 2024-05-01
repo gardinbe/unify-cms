@@ -1,0 +1,22 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"types": [
+			"./env.d.ts"
+		],
+		"paths": {
+			"~/*": [
+				"./src/*"
+			],
+			"~shared/*": [
+				"../shared/*"
+			]
+		}
+	},
+	"include": [
+		"**/*.ts",
+		"../shared/**/*.ts",
+		"rollup.config.ts",
+		".eslintrc.cjs"
+	]
+}

@@ -1,20 +1,11 @@
 /**
- * Object with functions to parse environment variables.
+ * Object with methods to parse environment variables.
  */
 export const env = {
 	/**
-	 * Parses and resolves an environment variable as a string.
+	 * Parses an environment variable value as a boolean.
 	 * @param value - Target environment variable value
-	 * @returns Parsed value
-	 */
-	str(value: string | undefined) {
-		return value || null;
-	},
-
-	/**
-	 * Parses and resolves an environment variable as a boolean.
-	 * @param value - Target environment variable value
-	 * @returns Parsed value
+	 * @returns Boolean
 	 */
 	bool(value: string | undefined) {
 		if (value === 'true')
@@ -27,9 +18,9 @@ export const env = {
 	},
 
 	/**
-	 * Parses and resolves an environment variable as a float.
+	 * Parses an environment variable value as a float.
 	 * @param value - Target environment variable value
-	 * @returns Parsed value
+	 * @returns Integer
 	 */
 	int(value: string | undefined) {
 		if (!value)
@@ -43,9 +34,9 @@ export const env = {
 	},
 
 	/**
-	 * Parses and resolves an environment variable as a float.
+	 * Parses an environment variable value as a float.
 	 * @param value - Target environment variable value
-	 * @returns Parsed value
+	 * @returns Float
 	 */
 	float(value: string | undefined) {
 		if (!value)

@@ -1,0 +1,406 @@
+[2024-05-01T09:53:44.505Z] [90mInitializing database...
+[39m
+[2024-05-01T09:53:44.506Z] [90mSynchronizing database...[39m
+[2024-05-01T09:53:44.518Z] [90mSynchronized database successfully
+[39m
+[2024-05-01T09:53:44.518Z] [90mTesting database connection...[39m
+[2024-05-01T09:53:44.519Z] [90mConnected to database successfully
+[39m
+[2024-05-01T09:53:44.522Z] Unify CMS running: [4m[33mhttp://localhost:3000
+[39m[24m
+[2024-05-01T09:54:09.805Z] [33mStarting Unify CMS...[39m
+[2024-05-01T09:54:09.806Z] [90mInitializing database...
+[39m
+[2024-05-01T09:54:09.806Z] [90mSynchronizing database...[39m
+[2024-05-01T09:54:09.822Z] [90mSynchronized database successfully
+[39m
+[2024-05-01T09:54:09.822Z] [90mTesting database connection...[39m
+[2024-05-01T09:54:09.823Z] [90mConnected to database successfully
+[39m
+[2024-05-01T09:54:09.826Z] Unify CMS running: [4m[33mhttp://localhost:3000
+[39m[24m
+[2024-05-01T09:54:24.634Z] [33mStarting Unify CMS...[39m
+[2024-05-01T09:54:24.635Z] [90mInitializing database...
+[39m
+[2024-05-01T09:54:24.635Z] [90mSynchronizing database...[39m
+[2024-05-01T09:54:24.650Z] [90mSynchronized database successfully
+[39m
+[2024-05-01T09:54:24.650Z] [90mTesting database connection...[39m
+[2024-05-01T09:54:24.651Z] [90mConnected to database successfully
+[39m
+[2024-05-01T09:54:24.654Z] Unify CMS running: [4m[33mhttp://localhost:3000
+[39m[24m
+[2024-05-01T09:54:32.354Z] [33mStarting Unify CMS...
+[39m
+[2024-05-01T09:54:32.355Z] [90mInitializing database...
+[39m
+[2024-05-01T09:54:32.355Z] [90mSynchronizing database...[39m
+[2024-05-01T09:54:32.368Z] [90mSynchronized database successfully
+[39m
+[2024-05-01T09:54:32.368Z] [90mTesting database connection...[39m
+[2024-05-01T09:54:32.369Z] [90mConnected to database successfully
+[39m
+[2024-05-01T09:54:32.372Z] Unify CMS running: [4m[33mhttp://localhost:3000
+[39m[24m
+[2024-05-01T09:54:46.075Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:54:46.076Z] [90mInitializing database...
+[39m
+[2024-05-01T09:54:46.076Z] [90mSynchronizing database...[39m
+[2024-05-01T09:54:46.087Z] [90mSynchronized database successfully
+[39m
+[2024-05-01T09:54:46.087Z] [90mTesting database connection...[39m
+[2024-05-01T09:54:46.088Z] [90mConnected to database successfully
+[39m
+[2024-05-01T09:54:46.091Z] Unify CMS running: [4m[33mhttp://localhost:3000
+[39m[24m
+[2024-05-01T09:54:52.935Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:54:52.936Z] [90mInitializing database...[39m
+
+[2024-05-01T09:54:52.936Z] [90mSynchronizing database...[39m
+[2024-05-01T09:54:52.950Z] [90mSynchronized database successfully
+[39m
+[2024-05-01T09:54:52.950Z] [90mTesting database connection...[39m
+[2024-05-01T09:54:52.951Z] [90mConnected to database successfully
+[39m
+[2024-05-01T09:54:52.955Z] Unify CMS running: [4m[33mhttp://localhost:3000
+[39m[24m
+[2024-05-01T09:54:59.627Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:54:59.628Z] [90mInitializing database...[39m
+
+[2024-05-01T09:54:59.628Z] [90mSynchronizing database...[39m
+[2024-05-01T09:54:59.640Z] [90mSynchronized database successfully
+[39m
+[2024-05-01T09:54:59.640Z] [90mTesting database connection...[39m
+[2024-05-01T09:54:59.641Z] [90mConnected to database successfully
+[39m
+[2024-05-01T09:54:59.644Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T09:55:36.077Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:55:36.078Z] [90mInitializing database...[39m
+
+[2024-05-01T09:55:36.078Z] [90mSynchronizing database...[39m
+[2024-05-01T09:55:36.091Z] [90mSynchronized database successfully[39m
+
+[2024-05-01T09:55:36.091Z] [90mTesting database connection...[39m
+[2024-05-01T09:55:36.092Z] [90mConnected to database successfully[39m
+
+[2024-05-01T09:55:36.095Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T09:56:21.711Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:56:21.712Z] [90mInitializing database...[39m
+
+[2024-05-01T09:56:21.712Z] [90mSynchronizing database...[39m
+[2024-05-01T09:56:21.723Z] [90mTesting database connection...[39m
+[2024-05-01T09:56:21.727Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T09:56:35.291Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:56:35.291Z] [90mInitializing database...[39m
+
+[2024-05-01T09:56:35.291Z] [90mSynchronizing database...[39m
+[2024-05-01T09:56:35.304Z] [90mTesting database connection...[39m
+
+[2024-05-01T09:56:35.308Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T09:56:37.424Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:56:37.424Z] [90mInitializing database...[39m
+
+[2024-05-01T09:56:37.424Z] [90mSynchronizing database...[39m
+
+[2024-05-01T09:56:37.436Z] [90mTesting database connection...[39m
+
+[2024-05-01T09:56:37.441Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T09:56:50.084Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:56:50.085Z] [90mSynchronizing database...[39m
+[2024-05-01T09:56:50.085Z] [90mInitializing database...[39m
+
+[2024-05-01T09:56:50.098Z] [90mTesting database connection...[39m
+[2024-05-01T09:56:50.102Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T09:57:15.752Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:57:15.753Z] [90mSynchronizing database...[39m
+[2024-05-01T09:57:15.764Z] [90mTesting database connection...[39m
+[2024-05-01T09:57:15.768Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T09:57:22.006Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:57:22.006Z] [90mInitializing database...[39m
+[2024-05-01T09:57:22.007Z] [90mSynchronizing database...[39m
+[2024-05-01T09:57:22.020Z] [90mTesting database connection...[39m
+[2024-05-01T09:57:22.024Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T09:58:00.321Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:58:00.321Z] [90mInitializing database...[39m
+[2024-05-01T09:58:00.321Z] [90mSynchronizing database...[39m
+[2024-05-01T09:58:00.334Z] [90mTesting database connection...[39m
+[2024-05-01T09:58:00.334Z] 
+
+[2024-05-01T09:58:00.337Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T09:58:12.292Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:58:12.293Z] [90mInitializing database...[39m
+[2024-05-01T09:58:12.293Z] [90mSynchronizing database...[39m
+[2024-05-01T09:58:12.305Z] [90mTesting database connection...[39m
+[2024-05-01T09:58:12.306Z] 
+[2024-05-01T09:58:12.310Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T09:58:51.528Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:58:51.529Z] [90mInitializing database...[39m
+[2024-05-01T09:58:51.529Z] [90mSynchronizing database...[39m
+[2024-05-01T09:58:51.541Z] [90mTesting database connection...[39m
+[2024-05-01T09:58:51.542Z] 
+[2024-05-01T09:58:51.545Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T09:58:51.543Z] [90mCreating server...[39m
+
+[2024-05-01T09:59:29.539Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:59:29.540Z] [90mInitializing schema directories...[39m
+
+[2024-05-01T09:59:29.541Z] [90mInitializing database...[39m
+[2024-05-01T09:59:29.541Z] [90mSynchronizing database...[39m
+[2024-05-01T09:59:29.553Z] [90mTesting database connection...[39m
+[2024-05-01T09:59:29.553Z] 
+[2024-05-01T09:59:29.556Z] [90mCreating server...[39m
+
+[2024-05-01T09:59:29.558Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T09:59:43.948Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:59:43.949Z] [90mInitializing schema directories...[39m
+[2024-05-01T09:59:43.949Z] [90mSynchronizing database...[39m
+[2024-05-01T09:59:43.949Z] [90mInitializing database...[39m
+[2024-05-01T09:59:43.961Z] [90mTesting database connection...[39m
+[2024-05-01T09:59:43.961Z] 
+[2024-05-01T09:59:43.962Z] [90mCreating server...[39m
+
+[2024-05-01T09:59:43.964Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T09:59:51.771Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T09:59:51.772Z] [90mInitializing schema directories...[39m
+[2024-05-01T09:59:51.773Z] [90mSynchronizing database...[39m
+[2024-05-01T09:59:51.773Z] [90mInitializing database...[39m
+[2024-05-01T09:59:51.788Z] [90mTesting database connection...[39m
+[2024-05-01T09:59:51.791Z] [90mCreating server...[39m
+
+[2024-05-01T09:59:51.793Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:00:07.973Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T10:00:07.974Z] [90mChecking schema directories...[39m
+[2024-05-01T10:00:07.974Z] [90mInitializing database...[39m
+[2024-05-01T10:00:07.974Z] [90mSynchronizing database...[39m
+[2024-05-01T10:00:07.989Z] [90mTesting database connection...[39m
+[2024-05-01T10:00:07.992Z] [90mCreating server...[39m
+
+[2024-05-01T10:00:07.993Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:00:41.168Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T10:00:41.169Z] [90mChecking schema directories...[39m
+[2024-05-01T10:00:41.170Z] [90mSynchronizing database...[39m
+[2024-05-01T10:00:41.170Z] [90mInitializing database...[39m
+[2024-05-01T10:00:41.183Z] [90mChecking database connection...[39m
+[2024-05-01T10:00:41.184Z] [90mCreating server...[39m
+
+[2024-05-01T10:00:41.186Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:00:57.986Z] [33mStarting Unify CMS...[39m
+
+[2024-05-01T10:00:57.987Z] [90mInitializing database...[39m
+[2024-05-01T10:00:57.987Z] [90mChecking schema directories...[39m
+[2024-05-01T10:00:58.000Z] [90mChecking database connection...[39m
+[2024-05-01T10:00:58.001Z] [90mCreating server...[39m
+
+[2024-05-01T10:00:58.003Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:01:38.506Z] [33mStarting Unify CMS[39m
+
+[2024-05-01T10:01:38.507Z] [90mChecking schema directories...[39m
+[2024-05-01T10:01:38.507Z] [90mInitializing database...[39m
+[2024-05-01T10:01:38.520Z] [90mChecking database connection...[39m
+[2024-05-01T10:01:38.522Z] [90mCreating server...[39m
+
+[2024-05-01T10:01:38.524Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:01:53.510Z] [33mStarting Unify CMS[39m
+
+[2024-05-01T10:01:53.511Z] [90mChecking schema directories[39m
+[2024-05-01T10:01:53.511Z] [90mInitializing database...[39m
+[2024-05-01T10:01:53.526Z] [90mChecking database connection...[39m
+[2024-05-01T10:01:53.528Z] [90mCreating server...[39m
+
+[2024-05-01T10:01:53.530Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:02:01.009Z] [33mStarting Unify CMS[39m
+
+[2024-05-01T10:02:01.010Z] [90mChecking schema directories[39m
+[2024-05-01T10:02:01.010Z] [90mInitializing database[39m
+[2024-05-01T10:02:01.022Z] [90mChecking database connection[39m
+[2024-05-01T10:02:01.026Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:02:01.024Z] [90mCreating server...[39m
+
+[2024-05-01T10:02:09.337Z] [33mStarting Unify CMS[39m
+
+[2024-05-01T10:02:09.338Z] [90mChecking schema directories[39m
+[2024-05-01T10:02:09.338Z] [90mInitializing database[39m
+[2024-05-01T10:02:09.350Z] [90mChecking database connection[39m
+[2024-05-01T10:02:09.352Z] [90mCreating server[39m
+
+[2024-05-01T10:02:09.354Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:02:33.818Z] [33mStarting Unify CMS[39m
+
+[2024-05-01T10:02:33.819Z] [90mChecking schema directories[39m
+[2024-05-01T10:02:33.819Z] [90mInitializing database[39m
+[2024-05-01T10:02:33.833Z] [90mChecking database connection[39m
+[2024-05-01T10:02:33.835Z] [90mCreating server[39m
+
+[2024-05-01T10:02:33.834Z] [90mCreating application[39m
+
+[2024-05-01T10:02:33.837Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:02:39.056Z] [33mStarting Unify CMS[39m
+
+[2024-05-01T10:02:39.057Z] [90mChecking schema directories[39m
+[2024-05-01T10:02:39.057Z] [90mInitializing database[39m
+[2024-05-01T10:02:39.071Z] [90mChecking database connection[39m
+[2024-05-01T10:02:39.072Z] [90mCreating application[39m
+[2024-05-01T10:02:39.074Z] [90mCreating server[39m
+
+[2024-05-01T10:02:39.075Z] Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:02:54.000Z] [33mStarting Unify CMS[39m
+
+[2024-05-01T10:02:54.001Z] [90mChecking schema directories[39m
+[2024-05-01T10:02:54.001Z] [90mInitializing database[39m
+[2024-05-01T10:02:54.013Z] [90mChecking database connection[39m
+[2024-05-01T10:02:54.014Z] [90mCreating application[39m
+[2024-05-01T10:02:54.016Z] [90mCreating server[39m
+[2024-05-01T10:02:54.018Z] 
+Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:03:45.050Z] [33mStarting Unify CMS[39m
+
+[2024-05-01T10:03:45.051Z] [90mChecking schema directories[39m
+[2024-05-01T10:03:45.051Z] [90mInitializing database[39m
+[2024-05-01T10:03:45.063Z] [90mChecking database connection[39m
+[2024-05-01T10:03:45.063Z] [90mCreating application[39m
+[2024-05-01T10:03:45.067Z] 
+Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:03:45.065Z] [90mCreating server[39m
+[2024-05-01T10:04:04.361Z] [33mStarting Unify CMS[39m
+
+[2024-05-01T10:04:04.362Z] [90mChecking schema directories[39m
+[2024-05-01T10:04:04.362Z] [90mInitializing database[39m
+[2024-05-01T10:04:04.373Z] [90mChecking database connection[39m
+[2024-05-01T10:04:04.374Z] [90mCreating application[39m
+[2024-05-01T10:04:04.375Z] [90mCreating server[39m
+[2024-05-01T10:04:04.377Z] 
+Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:04:14.141Z] [33mStarting Unify CMS[39m
+
+[2024-05-01T10:04:14.142Z] [90mChecking schema directories[39m
+[2024-05-01T10:04:14.142Z] [90mInitializing database[39m
+[2024-05-01T10:04:14.155Z] [90mChecking database connection[39m
+[2024-05-01T10:04:14.158Z] [90mCreating server[39m
+[2024-05-01T10:04:14.156Z] [90mCreating application[39m
+[2024-05-01T10:04:14.159Z] 
+Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:04:40.709Z] [33mStarting Unify CMS[39m
+
+[2024-05-01T10:04:40.710Z] [90mChecking schema directories[39m
+[2024-05-01T10:04:40.710Z] [90mInitializing database[39m
+[2024-05-01T10:04:40.722Z] [90mChecking database connection[39m
+[2024-05-01T10:04:40.723Z] [90mCreating application[39m
+[2024-05-01T10:04:40.724Z] [90mCreating server[39m
+[2024-05-01T10:04:40.726Z] 
+Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:05:40.853Z] [33mStarting Unify CMS[39m
+
+[2024-05-01T10:05:40.854Z] [90mChecking schema directories[39m
+[2024-05-01T10:05:40.854Z] [90mInitializing database[39m
+[2024-05-01T10:05:40.867Z] [90mChecking database connection[39m
+[2024-05-01T10:05:40.868Z] [90mCreating application[39m
+[2024-05-01T10:05:40.870Z] [90mCreating server[39m
+[2024-05-01T10:05:40.871Z] 
+Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:06:51.275Z] [33mStarting Unify CMS[39m
+
+[2024-05-01T10:06:51.276Z] [90mChecking schema directories[39m
+[2024-05-01T10:06:51.276Z] [90mInitializing database[39m
+[2024-05-01T10:06:51.290Z] [90mChecking database connection[39m
+[2024-05-01T10:06:51.293Z] [90mCreating server[39m
+[2024-05-01T10:06:51.291Z] [90mCreating application[39m
+[2024-05-01T10:06:51.294Z] 
+Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:07:19.833Z] [34mStarting Unify CMS[39m
+
+[2024-05-01T10:07:19.833Z] [90mChecking schema directories[39m
+[2024-05-01T10:07:19.834Z] [90mInitializing database[39m
+[2024-05-01T10:07:19.846Z] [90mChecking database connection[39m
+[2024-05-01T10:07:19.847Z] [90mCreating application[39m
+[2024-05-01T10:07:19.848Z] [90mCreating server[39m
+[2024-05-01T10:07:19.850Z] 
+Unify CMS running: [4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:07:32.623Z] [34mStarting Unify CMS[39m
+
+[2024-05-01T10:07:32.624Z] [90mChecking schema directories[39m
+[2024-05-01T10:07:32.624Z] [90mInitializing database[39m
+[2024-05-01T10:07:32.639Z] [90mChecking database connection[39m
+[2024-05-01T10:07:32.640Z] [90mCreating application[39m
+[2024-05-01T10:07:32.641Z] [90mCreating server[39m
+[2024-05-01T10:07:32.642Z] 
+[34mUnify CMS running: [39m[4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:07:33.580Z] [34mStarting Unify CMS[39m
+
+[2024-05-01T10:07:33.580Z] [90mChecking schema directories[39m
+[2024-05-01T10:07:33.581Z] [90mInitializing database[39m
+[2024-05-01T10:07:33.594Z] [90mChecking database connection[39m
+[2024-05-01T10:07:33.594Z] [90mCreating application[39m
+[2024-05-01T10:07:33.596Z] [90mCreating server[39m
+[2024-05-01T10:07:33.598Z] 
+[34mUnify CMS running: [39m[4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:17:42.885Z] [34mStarting Unify CMS[39m
+
+[2024-05-01T10:17:42.886Z] [90mChecking schema directories[39m
+[2024-05-01T10:17:42.886Z] [90mInitializing database[39m
+[2024-05-01T10:17:42.900Z] [90mChecking database connection[39m
+[2024-05-01T10:17:42.901Z] [90mCreating application[39m
+[2024-05-01T10:17:42.902Z] [90mCreating server[39m
+[2024-05-01T10:17:42.904Z] 
+[34mUnify CMS running: [39m[4m[33mhttp://localhost:3000[39m[24m
+
+[2024-05-01T10:17:48.075Z] [34mStarting Unify CMS[39m
+
+[2024-05-01T10:17:48.076Z] [90mChecking schema directories[39m
+[2024-05-01T10:17:48.076Z] [90mInitializing database[39m
+[2024-05-01T10:17:48.088Z] [90mChecking database connection[39m
+[2024-05-01T10:17:48.088Z] [90mCreating application[39m
+[2024-05-01T10:17:48.090Z] [90mCreating server[39m
+[2024-05-01T10:17:48.092Z] 
+[32mUnify CMS running: [39m[4m[33mhttp://localhost:3000[39m[24m
+

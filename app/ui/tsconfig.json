@@ -1,0 +1,24 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"types": [
+			"vite/client",
+			"./src/shims.vue.d.ts"
+		],
+		"paths": {
+			"~/*": [
+				"./src/*"
+			],
+			"~shared/*": [
+				"../shared/*"
+			]
+		}
+	},
+	"include": [
+		"**/*.ts",
+		"**/*.vue",
+		"../shared/**/*.ts",
+		"vite.config.ts",
+		".eslintrc.cjs"
+	]
+}

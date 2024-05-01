@@ -2,6 +2,8 @@
 node_modules
 dist
 .tmp
+build
+data
 
 # files
 .env
