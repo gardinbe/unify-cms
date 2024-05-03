@@ -4,9 +4,9 @@ dist
 .tmp
 data
 build
+logs
 app/server/data
 app/server/build
-logs
 .rollup.cache
 
 # files
