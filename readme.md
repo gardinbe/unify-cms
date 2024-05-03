@@ -7,27 +7,23 @@ Unify CMS is a lightweight, headless CMS. It focuses primarily on simplicity and
 1. Ensure you're got and are using atleast Node 20.11. If you haven't:
 	1. Install [NVM](https://github.com/coreybutler/nvm-windows)
 	2. Open a new terminal/powershell
-	3. Run `nvm install 20.11.1`
-	4. Run `nvm use 20.11.1`
+	3. Run `nvm install 20.11`
+	4. Run `nvm use 20.11`
 2. Install yarn: `npm i -g yarn`
-3. Change directory into the root of this project
+3. Navigate to the root of this project
 4. Install all dependencies: `yarn install`
 
-## Terminology
+## Terminologies
 
-There are two crucial terminologies to understand: **schema** and **content**.
+There are two crucial terminologies to understand: what's meant by "**schema**" and "**content**".
 
 ### Schema
 
-*Schemas* define the structure of content, and what content can be created. They specify what fields should be present, along with their names, types and several other properties.
-
-They're stored in JSON files (to allow schemas to be added to repositories).
+*Schemas* define the structure of content, and what content can be created. They specify what fields should be present, along with their names, types and several other properties. They can be created and modified using the schemas editor. They're stored directly in JSON files (to allow schemas to be added to repositories).
 
 ### Content
 
-*Content* refers to data that follows a schema.
-
-It's stored in the database and served over the public API.
+*Content* refers to data that follows a schema. It can be created and modified using the content editor. It's stored in the database and served over the public API.
 
 ## Project structure
 
@@ -42,7 +38,7 @@ The web interface is a visual representation of the content stored on the server
 
 If you want to use Unify with your application, you'll need to create a build of it. To do this:
 
-1. Ensure you've installed the project, as per **'Installation'**
+1. Ensure you've installed the project, as per **[Installation](#installation)**
 2. Navigate to the root of the project
 3. Run `yarn build`
 

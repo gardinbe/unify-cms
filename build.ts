@@ -63,7 +63,7 @@ await runTasks([
 
 			await fsp.writeFile(
 				resolve(import.meta.dirname, 'build/package.json'),
-				JSON.stringify(buildPackageJson),
+				JSON.stringify(buildPackageJson, undefined, '  '),
 				'utf-8'
 			);
 
