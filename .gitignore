@@ -6,6 +6,8 @@ schemas
 build
 logs
 data
+.rollup.cache
 
 # files
 .env
+*.tsbuildinfo

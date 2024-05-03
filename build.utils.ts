@@ -3,33 +3,43 @@ import 'colors';
 import { promisify } from 'util';
 
 export interface Task {
+	/** Name of the task. */
 	name: string;
+	/** Short description of the task. */
 	description: string;
+	/** Operation/function of the task. */
 	operation(): void | Promise<void>;
 }
 
 /**
- * Run an array of tasks sequentially.
- * @param tasks - Tasks to run
+ * Runs an array of tasks sequentially.
+ * @param tasks - Target tasks
  */
 export const runTasks = async (tasks: Task[]) => {
-	for (const task of tasks) {
-		const start = Date.now();
+	for (const task of tasks)
+		await runTask(task);
+};
 
-		const elapsed = () =>
-			((Date.now() - start) / 1000).toFixed(3);
+/**
+ * Runs a task.
+ * @param task - Target task
+ */
+export const runTask = async (task: Task) => {
+	const start = Date.now();
 
-		console.info('Task: '.gray + task.name.yellow);
-		console.info('Description: '.gray + ''.reset + task.description);
+	const elapsed = () =>
+		((Date.now() - start) / 1000).toFixed(3);
 
-		try {
-			await task.operation();
-			console.info(`Finished in ${elapsed()}s`.gray + '\n');
+	console.info('Task: '.gray + task.name.yellow);
+	console.info('Description: '.gray + ''.reset + task.description);
 
-		} catch (e) {
-			console.info(`Failed after ${elapsed()}s`.red);
-			console.error(e);
-		}
+	try {
+		await task.operation();
+		console.info(`Finished in ${elapsed()}s`.gray + '\n');
+
+	} catch (e) {
+		console.info(`Failed after ${elapsed()}s`.red);
+		console.error(e);
 	}
 };
 

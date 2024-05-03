@@ -110,4 +110,4 @@ const patch: Handler = async (req, res) => {
 	res.status(200).json({ success: 'Updated single successfully' });
 };
 
-export const privateSinglesController = { get, post, patch };
+export const internalSinglesController = { get, post, patch };

@@ -205,4 +205,4 @@ const deleteItem: Handler = async (req, res) => {
 	res.status(200).json({ success: 'Deleted collection item successfully' });
 };
 
-export const privateCollectionsController = { get, getItem, postItem, patchItem, deleteItem };
+export const internalCollectionsController = { get, getItem, postItem, patchItem, deleteItem };

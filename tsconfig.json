@@ -8,8 +8,10 @@
 		"allowSyntheticDefaultImports": true,
 		"forceConsistentCasingInFileNames": true,
 		"checkJs": true,
+		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"experimentalDecorators": true,
+		"incremental": true,
 		"emitDecoratorMetadata": true,
 		"target": "ESNext",
 		//~~~ Type checking

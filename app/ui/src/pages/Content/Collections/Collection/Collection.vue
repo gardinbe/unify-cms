@@ -51,7 +51,7 @@ const items = await api.getCollectionItems(name);
 
 const menuItems: MenuItem[] = items.map(
 	item => ({
-		label: capitalize(item.properties[schema.item_display_property] as string),
+		label: item.properties[schema.item_display_property] as string,
 		link: `${router.resolve({ name: 'collection-content' }).href}/${item.id}`
 	})
 );
