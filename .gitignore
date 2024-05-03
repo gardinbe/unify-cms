@@ -2,10 +2,11 @@
 node_modules
 dist
 .tmp
-schemas
-build
-logs
 data
+build
+app/server/data
+app/server/build
+logs
 .rollup.cache
 
 # files
