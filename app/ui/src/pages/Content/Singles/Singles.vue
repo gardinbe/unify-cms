@@ -17,6 +17,15 @@
 					<h1>Single Editor</h1>
 					<p>Please select a single to edit.</p>
 				</hgroup>
+				<div>
+					<p class="secondary-text">
+						<b>Singles</b> refer to schemas that only have one unique set of content associated with
+						it: it can only be consumed once.
+					</p>
+					<p class="secondary-text">
+						This is intended to be used for unique content items, such as a page on the site.
+					</p>
+				</div>
 			</section>
 		</RouterView>
 	</ContentWithSideMenu>

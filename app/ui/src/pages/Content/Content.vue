@@ -15,6 +15,16 @@
 						<h1>Content Editor</h1>
 						<p>Please select either a single or collection to edit.</p>
 					</hgroup>
+					<div>
+						<p class="secondary-text">
+							<b>Content</b> refers to data that follows a schema.
+						</p>
+
+						<p class="secondary-text">
+							It can be created and modified using the content editor. It's stored in the database
+							and served over the public API.
+						</p>
+					</div>
 				</section>
 			</RouterView>
 		</ContentWithSideMenu>

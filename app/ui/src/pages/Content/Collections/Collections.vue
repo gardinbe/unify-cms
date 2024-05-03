@@ -17,6 +17,16 @@
 					<h1>Collection Editor</h1>
 					<p>Please select a collection to edit.</p>
 				</hgroup>
+				<div>
+					<p class="secondary-text">
+						<b>Collections</b> refer to schemas that can have multiple sets of content associated with
+						it: it can be consumed many times (by collection items).
+					</p>
+					<p class="secondary-text">
+						This is intended for multiple content items which all share the same properties, such as a
+						collection of users.
+					</p>
+				</div>
 			</section>
 		</RouterView>
 	</ContentWithSideMenu>

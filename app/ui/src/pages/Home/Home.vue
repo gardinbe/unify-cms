@@ -3,17 +3,19 @@
 		<section class="container">
 			<hgroup>
 				<h1>Unify CMS</h1>
-				<p>Welcome to the Unify Content Management System.</p>
+				<p>Welcome to Unify.</p>
 			</hgroup>
-			<p>
-				Please use the navigation buttons to navigate to the section you are looking
-				for.
-			</p>
+			<div>
+				<p>
+					Unify is a lightweight, headless Content Management System. It focuses primarily on simplicity
+					and ease-of-use: from concise terminology to efficient API design.
+				</p>
+			</div>
 		</section>
 		<section class="container">
 			<h2>Links & Support</h2>
 			<p>
-				For any additional tips and tricks, please contact
+				For any support or additional advice, please contact
 				<a href="mailto:gardinbe@gmail.com">gardinbe@gmail.com</a>.
 			</p>
 		</section>
