@@ -13,13 +13,13 @@ interface LogOptions {
  * @param message - Target message
  * @param file - Target file name **without extension**: `logs/[filename].log`
  */
-export const log = async (message: string, options: LogOptions = { file: 'server', toConsole: true }) => {
+export const log = (message: string, options: LogOptions = { file: 'server', toConsole: true }) => {
 	if (options.toConsole)
 		console.log(message);
 
 	const filePath = resolve(config.LOGS_PATH, options.file + '.log');
 	const timestamp = new Date().toISOString();
-	await fsp.appendFile(
+	void fsp.appendFile(
 		filePath,
 		`[${timestamp}] ${message}\n`
 	);
@@ -30,34 +30,16 @@ export const log = async (message: string, options: LogOptions = { file: 'server
  * @param error - Target error
  * @param file - Target file name **without extension**: `logs/[filename].log`
  */
-export const logError = async (error: unknown, options: LogOptions = { file: 'server', toConsole: true }) => {
+export const logError = (error: unknown, options: LogOptions = { file: 'server', toConsole: true }) => {
 	if (options.toConsole)
 		console.error(error);
 
 	const filePath = resolve(config.LOGS_PATH, options.file + '.log');
 	const timestamp = new Date().toISOString();
-	await fsp.appendFile(
+	void fsp.appendFile(
 		filePath,
 		`[${timestamp}] [ERROR] ${error as string}\n`
 	);
-};
-
-/**
- * Logs a message to the console and to a file **synchronously**.
- * @param message - Target message
- * @param file - Target file name **without extension**: `logs/[filename].log`
- */
-export const logSync = (...args: Parameters<typeof log>) => {
-	void log(...args);
-};
-
-/**
- * Logs an error to the console and to a file **synchronously**.
- * @param error - Target message
- * @param file - Target file name **without extension**: `logs/[filename].log`
- */
-export const logErrorSync = (...args: Parameters<typeof logError>) => {
-	void logError(...args);
 };
 
 /**

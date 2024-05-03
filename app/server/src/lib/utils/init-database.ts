@@ -7,23 +7,23 @@ import 'colors';
  * @param db - Target database
  */
 export const initDatabase = async (db: Sequelize) => {
-	void log('Initializing database'.gray);
+	log('Initializing database'.gray);
 
 	try {
 		//creates db if doesn't exist
 		await db.sync();
 	} catch (e) {
-		void logError('Failed to synchronize database'.red);
+		logError('Failed to synchronize database'.red);
 		throw e;
 	}
 
-	void log('Checking database connection'.gray);
+	log('Checking database connection'.gray);
 
 	try {
 		//test db connection
 		await db.authenticate();
 	} catch (e) {
-		void logError('Failed to connect to database'.red);
+		logError('Failed to connect to database'.red);
 		throw e;
 	}
 };

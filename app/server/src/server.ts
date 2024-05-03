@@ -13,9 +13,9 @@ import 'colors';
 
 await initLogsDir();
 
-void log('Starting Unify CMS'.blue + '\n');
+log('Starting Unify CMS'.blue + '\n');
 
-void log('Checking schema directories'.gray);
+log('Checking schema directories'.gray);
 
 await initSchemaDirs();
 
@@ -25,7 +25,7 @@ await initDatabase(data);
 
 //create app, init middlewares
 
-void log('Creating application'.gray);
+log('Creating application'.gray);
 
 const app = express();
 
@@ -45,10 +45,10 @@ app.use(router);
 
 // create http server
 
-void log('Creating server'.gray);
+log('Creating server'.gray);
 
 const server = createServer(app);
 
 server.listen(config.PORT, () => {
-	void log('\n' + 'Unify CMS running: '.green + `http://localhost:${config.PORT}`.yellow.underline + '\n');
+	log('\n' + 'Unify CMS running: '.green + `http://localhost:${config.PORT}`.yellow.underline + '\n');
 });

@@ -25,7 +25,7 @@ const get: Handler = async (req, res) => {
 
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
-		void logError(e);
+		logError(e);
 		return;
 	}
 
