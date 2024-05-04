@@ -11,4 +11,5 @@ app/server/build
 
 # files
 .env
+*.log
 *.tsbuildinfo

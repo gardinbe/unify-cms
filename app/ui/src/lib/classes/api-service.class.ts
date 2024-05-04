@@ -73,7 +73,7 @@ export class ApiService<
 
 	/**
 	 * Sends a **GET** request to the API.
-	 * @param endpoint - Target endpoint
+	 * @param endpoint - Destination endpoint
 	 * @param options - Fetch request options
 	 * @returns Response data
 	 * @throws Error if request failed or took too long
@@ -90,7 +90,7 @@ export class ApiService<
 
 	/**
 	 * Sends a **POST** request to the API.
-	 * @param endpoint - Target endpoint
+	 * @param endpoint - Destination endpoint
 	 * @param body - Body content
 	 * @param options - Fetch request options
 	 * @returns Response data
@@ -112,7 +112,7 @@ export class ApiService<
 	 *
 	 * The body is stringified, and the `Content-Type` header is set to `application/json`
 	 * automatically.
-	 * @param endpoint - Target endpoint
+	 * @param endpoint - Destination endpoint
 	 * @param obj - JSON object
 	 * @param options - Fetch request options
 	 * @returns Response data
@@ -135,7 +135,7 @@ export class ApiService<
 
 	/**
 	 * Sends a **PUT** request to the API.
-	 * @param endpoint - Target endpoint
+	 * @param endpoint - Destination endpoint
 	 * @param body - Body content
 	 * @param options - Fetch request options
 	 * @returns Response data
@@ -157,7 +157,7 @@ export class ApiService<
 	 *
 	 * The body is stringified, and the `Content-Type` header is set to `application/json`
 	 * automatically.
-	 * @param endpoint - Target endpoint
+	 * @param endpoint - Destination endpoint
 	 * @param obj - JSON object
 	 * @param options - Fetch request options
 	 * @returns Response data
@@ -180,7 +180,7 @@ export class ApiService<
 
 	/**
 	 * Sends a **PATCH** request to the API.
-	 * @param endpoint - Target endpoint
+	 * @param endpoint - Destination endpoint
 	 * @param body - Body content
 	 * @param options - Fetch request options
 	 * @returns Response data
@@ -202,7 +202,7 @@ export class ApiService<
 	 *
 	 * The body is stringified, and the `Content-Type` header is set to `application/json`
 	 * automatically.
-	 * @param endpoint - Target endpoint
+	 * @param endpoint - Destination endpoint
 	 * @param obj - JSON object
 	 * @param options - Fetch request options
 	 * @returns Response data
@@ -225,7 +225,7 @@ export class ApiService<
 
 	/**
 	 * Sends a **DELETE** request to the API.
-	 * @param endpoint - Target endpoint
+	 * @param endpoint - Destination endpoint
 	 * @param options - Fetch request options
 	 * @returns Response data
 	 * @throws Error if request failed or took too long

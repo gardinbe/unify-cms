@@ -44,7 +44,7 @@ const router = useRouter();
 
 /**
  * Gets the link of a route using it's name.
- * @param name - Target route name
+ * @param name - Route name
  * @returns Link URL
  */
 const linkTo = (name: string) =>

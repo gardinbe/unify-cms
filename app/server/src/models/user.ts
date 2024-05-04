@@ -22,7 +22,7 @@ export class User extends Model<
 
 	/**
 	 * Checks if the given password is valid.
-	 * @param password - Target password
+	 * @param password - Password to check
 	 * @returns Password validity
 	 */
 	async validPassword(password: string): Promise<boolean> {

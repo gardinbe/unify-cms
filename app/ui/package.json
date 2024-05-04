@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "build-external": "vite build --outDir ../../build/ui",
+    "build-external": "vite build --outDir ../../build/ui --emptyOutDir",
     "preview": "vite preview"
   },
   "dependencies": {

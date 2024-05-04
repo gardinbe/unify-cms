@@ -11,8 +11,8 @@
     "node": ">=20.11"
   },
   "scripts": {
-    "start": "env-cmd node dist/server.js",
-    "dev": "env-cmd tsx watch src/server.ts",
+    "start": "env-cmd --silent node dist/server.js",
+    "dev": "env-cmd --silent tsx watch src/server.ts",
     "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "build-external": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --dir ../../build"
   },

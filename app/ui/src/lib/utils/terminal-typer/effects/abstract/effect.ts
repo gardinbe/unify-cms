@@ -26,7 +26,7 @@ export interface EffectContext {
 export abstract class Effect<TEffectContext extends EffectContext = EffectContext> {
 	/**
 	 * Applies an interval delay.
-	 * @param interval - Target interval
+	 * @param interval - Interval
 	 */
 	protected static async interval(interval: EffectInterval) {
 		switch (interval.variance) {

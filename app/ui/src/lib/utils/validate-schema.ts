@@ -2,8 +2,8 @@ import type { SchemaProperties, SchemaPropertyType } from '~shared/types';
 
 /**
  * Checks if a set of properties matches the properties of a schema.
- * @param schemaProperties - Target schema properties
- * @param properties - Target properties
+ * @param schemaProperties - Schema properties
+ * @param properties - Properties
  * @returns True/False
  */
 export const validateProperties = (schemaProperties: SchemaProperties, properties: object): boolean => {
@@ -29,8 +29,8 @@ export const validateProperties = (schemaProperties: SchemaProperties, propertie
 
 /**
  * Checks if the type of a property matches the schema's property type.
- * @param property - Target property
- * @param type - Target property type
+ * @param property - Property
+ * @param type - Property type
  * @returns True/False
  */
 const validatePropertyType = (property: unknown, type: SchemaPropertyType): boolean => {

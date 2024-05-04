@@ -3,7 +3,7 @@ const ESCAPE_REGEX_PATTERN = /[/\-\\^$*+?.()|[\]{}]/g;
 /**
  * Escapes any Regex control characters within a string.
  * - This does **not** double-escape - use `String.raw`.
- * @param str - Target string
+ * @param str - String
  * @returns Escaped string
  */
 export const escapeRegex = (str: string) =>

@@ -25,7 +25,7 @@ const get: Handler = async (req, res) => {
 
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
-		logError(e);
+		void logError(e);
 		return;
 	}
 
@@ -70,7 +70,7 @@ const getItem: Handler = async (req, res) => {
 
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
-		logError(e);
+		void logError(e);
 		return;
 	}
 
@@ -107,7 +107,7 @@ const postItem: Handler = async (req, res) => {
 
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
-		logError(e);
+		void logError(e);
 		return;
 	}
 
@@ -161,7 +161,7 @@ const patchItem: Handler = async (req, res) => {
 
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
-		logError(e);
+		void logError(e);
 		return;
 	}
 
@@ -198,7 +198,7 @@ const deleteItem: Handler = async (req, res) => {
 
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
-		logError(e);
+		void logError(e);
 		return;
 	}
 

@@ -99,7 +99,7 @@ const post: Handler = async (req, res) => {
 
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
-		logError(e);
+		void logError(e);
 		return;
 	}
 
@@ -155,7 +155,7 @@ const patch: Handler = async (req, res) => {
 
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
-		logError(e);
+		void logError(e);
 		return;
 	}
 
@@ -188,7 +188,7 @@ const _delete: Handler = async (req, res) => {
 
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
-		logError(e);
+		void logError(e);
 		return;
 	}
 

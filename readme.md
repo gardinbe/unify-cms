@@ -68,9 +68,11 @@ Once this is done, you'll need to install the dependencies for it:
 
 ## Missing/TODO features
 
-- Media manager: the ability to upload and reference media
+- User accounts and security
+- A media manager with the ability to upload and reference media
 - Ability to create objects in schemas
 - Ability to create 'components': creating child objects within schemas
 - Proper JSON schema formatting: https://json-schema.org
 - Ability to reference other singles or collections within singles/collection items
 - Several configuration options, including CORS management, ability to change port in frontend
+- Logging when accessing api routes, editing schemas, etc.

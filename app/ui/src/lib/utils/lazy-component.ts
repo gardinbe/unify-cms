@@ -12,12 +12,13 @@ import Loader from '~/components/Loader/Loader.vue';
  * https://stackoverflow.com/a/59092610
  *
  * *This is dodgy Vue business...*
- * @param component - Target component to be lazy-loaded
+ * @param component - Vue component
  */
 export const lazy = <T extends Component>(component: Promise<T>) => {
 	const asyncComponent = defineAsyncComponent({
 		loader: async () => component,
-		loadingComponent: Loader
+		//TODO: fix this type issue
+		loadingComponent: Loader as Component
 	});
 
 	return defineComponent({ render: () => h(asyncComponent) });

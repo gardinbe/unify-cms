@@ -7,6 +7,6 @@ export const data = new Sequelize({
 	storage: config.DATABASE_PATH
 		?? ':memory:',
 	logging: config.IS_PROD
-		? message => log(message, { file: 'database', toConsole: false })
+		? message => void log(message, { file: 'database', toConsole: false })
 		: false
 });

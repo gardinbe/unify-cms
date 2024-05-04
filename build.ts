@@ -1,19 +1,17 @@
 import fsp from 'fs/promises';
 import { resolve } from 'path';
-import { promisify } from 'util';
-import { exec } from 'child_process';
-import { getLatestPackageVersion, runTasks } from './build.utils';
+import { exec, getLatestPackageVersion, log, runTasks } from './build.utils';
 import 'colors';
 
-const packageJson = await import('./package.json');
+const pkgJson = await import('./package.json');
 
-console.log('Creating Unify CMS build'.blue);
-console.log('Version: '.blue + packageJson.version + '\n');
+await log('Creating Unify CMS build'.blue);
+await log('Version: '.blue + pkgJson.version + '\n');
 
 await runTasks([
 	{
-		name: 'pre-build',
-		description: 'Clean build directory',
+		name: 'clean-build-dir',
+		description: 'Clean the build directory',
 		async operation() {
 			await fsp.rm(
 				resolve(import.meta.dirname, 'build'),
@@ -28,42 +26,42 @@ await runTasks([
 		name: 'build-server',
 		description: 'Build the server',
 		async operation() {
-			await promisify(exec)('yarn build:server');
+			await exec('yarn build:server');
 		}
 	},
 	{
 		name: 'build-ui',
 		description: 'Build the UI',
 		async operation() {
-			await promisify(exec)('yarn build:ui');
+			await exec('yarn build:ui');
 		}
 	},
 	{
 		name: 'generate-resources',
-		description: 'Generate resources for the build',
+		description: 'Generate files and resources for the build',
 		async operation() {
-			const serverPackageJson = await import('./app/server/package.json');
-			const buildPackageJson = {
+			const serverPkgJson = await import('./app/server/package.json');
+			const buildPkgJson = {
 				private: true,
 				name: 'unify-cms',
-				version: packageJson.version,
+				version: pkgJson.version,
 				description: 'Unify CMS build',
 				license: 'ISC',
 				type: 'module',
 				main: 'server.js',
-				engines: packageJson.engines,
+				engines: pkgJson.engines,
 				scripts: {
 					start: 'env-cmd --silent cross-env NODE_ENV=production IS_EXTERNAL_BUILD=true node server.js'
 				},
 				dependencies: {
-					...serverPackageJson.dependencies,
+					...serverPkgJson.dependencies,
 					'cross-env': '^' + await getLatestPackageVersion('cross-env')
 				}
 			};
 
 			await fsp.writeFile(
 				resolve(import.meta.dirname, 'build/package.json'),
-				JSON.stringify(buildPackageJson, undefined, '  '),
+				JSON.stringify(buildPkgJson, undefined, '  '),
 				'utf-8'
 			);
 
@@ -75,4 +73,4 @@ await runTasks([
 	}
 ]);
 
-console.log('Unify CMS build succeeded'.green);
+await log('Unify CMS build succeeded'.blue);

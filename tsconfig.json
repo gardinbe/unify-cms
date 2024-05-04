@@ -11,7 +11,7 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"experimentalDecorators": true,
-		"incremental": true,
+		// "incremental": true, causes warnings with @rollup/typescript when building
 		"emitDecoratorMetadata": true,
 		"target": "ESNext",
 		//~~~ Type checking

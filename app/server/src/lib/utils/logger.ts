@@ -4,42 +4,47 @@ import { resolve } from 'path';
 import config from '~/config';
 
 interface LogOptions {
+	/** File name **without extension** to log to under the `config.LOGS_PATH` directory. */
 	file: string;
+	/** Whether or not to log the message to the console as well. */
 	toConsole: boolean;
 }
 
+export const defaultLogOptions: LogOptions = {
+	file: 'server',
+	toConsole: true
+};
+
 /**
  * Logs a message to the console and to a file.
- * @param message - Target message
- * @param file - Target file name **without extension**: `logs/[filename].log`
+ * @param message - Message
+ * @param options - Options
  */
-export const log = (message: string, options: LogOptions = { file: 'server', toConsole: true }) => {
+export const log = async (message: string, options = defaultLogOptions) => {
 	if (options.toConsole)
 		console.log(message);
 
 	const filePath = resolve(config.LOGS_PATH, options.file + '.log');
 	const timestamp = new Date().toISOString();
-	void fsp.appendFile(
-		filePath,
-		`[${timestamp}] ${message}\n`
-	);
+	await fsp.appendFile(filePath, `[${timestamp}] ${message.strip}\n`);
 };
 
 /**
  * Logs an error to the console and to a file.
- * @param error - Target error
- * @param file - Target file name **without extension**: `logs/[filename].log`
+ * @param error - Error
+ * @param options - Options
  */
-export const logError = (error: unknown, options: LogOptions = { file: 'server', toConsole: true }) => {
+export const logError = async (error: unknown, options = defaultLogOptions) => {
 	if (options.toConsole)
 		console.error(error);
 
+	const formattedError = typeof error === 'string'
+		? error.strip
+		: error as string;
+
 	const filePath = resolve(config.LOGS_PATH, options.file + '.log');
 	const timestamp = new Date().toISOString();
-	void fsp.appendFile(
-		filePath,
-		`[${timestamp}] [ERROR] ${error as string}\n`
-	);
+	await fsp.appendFile(filePath, `[${timestamp}] [ERROR] ${formattedError}\n`);
 };
 
 /**

@@ -1,29 +1,29 @@
 import type { Sequelize } from 'sequelize';
-import { log, logError } from '~/lib/utils';
+import { log, logError } from './logger';
 import 'colors';
 
 /**
  * Synchronizes and tests the connection of a database.
- * @param db - Target database
+ * @param db - Database
  */
 export const initDatabase = async (db: Sequelize) => {
-	log('Initializing database'.gray);
+	void log('Initializing database'.gray);
 
 	try {
 		//creates db if doesn't exist
 		await db.sync();
 	} catch (e) {
-		logError('Failed to synchronize database'.red);
+		void logError('Failed to synchronize database');
 		throw e;
 	}
 
-	log('Checking database connection'.gray);
+	void log('Checking database connection'.gray);
 
 	try {
 		//test db connection
 		await db.authenticate();
 	} catch (e) {
-		logError('Failed to connect to database'.red);
+		void logError('Failed to connect to database');
 		throw e;
 	}
 };

@@ -1,8 +1,7 @@
 //TODO: this might not be needed?
 
 declare module '*.vue' { // NOTE: ts-loader
-	import type { defineComponent } from 'vue';
+	import type { Component } from 'vue';
 
-	const component: ReturnType<typeof defineComponent>;
-	export default component;
+	export default Component;
 }

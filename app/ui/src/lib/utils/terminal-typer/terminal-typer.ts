@@ -12,7 +12,7 @@ import { escapeRegex, mergeShallowRight, throwExp } from '~/lib/utils';
  */
 export interface TerminalTyperOptions {
 	/**
-	 * HTML content to replace the target element's innerHTML with.
+	 * HTML content to replace the element's innerHTML with.
 	 * @defaultValue
 	 * ```typescript
 	 *	null
@@ -189,7 +189,7 @@ export class TerminalTyper {
 
 	/**
 	 * Creates a new terminal-typer instance.
-	 * @param el - Target element
+	 * @param el - Element
 	 * @param options - Options
 	 */
 	constructor(el: HTMLElement, options: TerminalTyperOptions) {
@@ -262,7 +262,7 @@ export class TerminalTyper {
 	/**
 	 * Parses a node and returns an array of effects to be performed in
 	 * order.
-	 * @param node - Target node
+	 * @param node - Node
 	 * @returns Array of effects
 	 */
 	private parse(node: Node): Effect[] {
@@ -277,7 +277,7 @@ export class TerminalTyper {
 	/**
 	 * Recursively retrieves and returns all of a node's text nodes as
 	 * an array.
-	 * @param node - Target node
+	 * @param node - Node
 	 * @returns Array of all text nodes
 	 */
 	private getTextNodes(node: Node): Text[] {
@@ -295,7 +295,7 @@ export class TerminalTyper {
 	 *
 	 * Replaces `textNode` with a wrapper containing the newly created
 	 * containers.
-	 * @param textNode - Target text node
+	 * @param textNode - Text node
 	 * @returns Character containers
 	 */
 	private createContainerEls(textNode: Text): CharContainers {
@@ -320,7 +320,7 @@ export class TerminalTyper {
 
 	/**
 	 * Parses and extracts effects from a text node's content.
-	 * @param text - Target text node
+	 * @param text - Text node
 	 * @param container - Char containers
 	 * @returns Array of effects
 	 */
@@ -380,7 +380,7 @@ export class TerminalTyper {
 	 * Sanitizes a string.
 	 *
 	 * Removes escape characters where necessary.
-	 * @param str - Target string
+	 * @param str - String
 	 * @returns Sanitized string
 	 */
 	private sanitize(str: string): string {

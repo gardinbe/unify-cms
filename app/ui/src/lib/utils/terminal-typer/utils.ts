@@ -2,8 +2,8 @@ import { throwExp } from '~/lib/utils';
 
 /**
  * Converts a string to an integer.
- * @param value - Target value
- * @returns Integer value
+ * @param value - String
+ * @returns Integer
  * @throws Error if conversion failed
  */
 export const strToInt = (value: string) => {
@@ -15,8 +15,8 @@ export const strToInt = (value: string) => {
 
 /**
  * Converts a string to a float.
- * @param value - Target value
- * @returns Float value
+ * @param value - String
+ * @returns Float
  * @throws Error if conversion failed
  */
 export const strToFloat = (value: string) => {

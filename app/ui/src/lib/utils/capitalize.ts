@@ -1,6 +1,6 @@
 /**
  * Capitalizes the first character of a string.
- * @param str - Target string
+ * @param str - String
  * @returns Capitalized string
  */
 export const capitalize = (str: string) =>

@@ -82,7 +82,7 @@ export class Cursor {
 
 	/**
 	 * Creates a new terminal-typer cursor instance.
-	 * @param el - Target element to wrap with the cursor
+	 * @param el - Element to wrap with the cursor
 	 * @param options - Options
 	 */
 	constructor(el: HTMLElement, options: CursorOptions) {
@@ -118,8 +118,8 @@ export class Cursor {
 	}
 
 	/**
-	 * Positions the cursor next to the target element.
-	 * @param el - Target element
+	 * Positions the cursor next to the provided element.
+	 * @param el - Element
 	 */
 	moveTo(el: HTMLElement) {
 		this.activeEl = el;

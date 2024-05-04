@@ -1,10 +1,10 @@
 /**
  * Object with methods to parse environment variables.
  */
-export const env = {
+export const parseEnv = {
 	/**
 	 * Parses an environment variable value as a boolean.
-	 * @param value - Target environment variable value
+	 * @param value - Environment variable value
 	 * @returns Boolean
 	 */
 	bool(value: string | undefined) {
@@ -19,7 +19,7 @@ export const env = {
 
 	/**
 	 * Parses an environment variable value as a float.
-	 * @param value - Target environment variable value
+	 * @param value - Environment variable value
 	 * @returns Integer
 	 */
 	int(value: string | undefined) {
@@ -35,7 +35,7 @@ export const env = {
 
 	/**
 	 * Parses an environment variable value as a float.
-	 * @param value - Target environment variable value
+	 * @param value - Environment variable value
 	 * @returns Float
 	 */
 	float(value: string | undefined) {
