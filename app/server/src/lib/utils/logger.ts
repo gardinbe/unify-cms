@@ -20,11 +20,13 @@ export const defaultLogOptions: LogOptions = {
  * @param message - Message
  * @param options - Options
  */
-export const log = async (message: string, options = defaultLogOptions) => {
-	if (options.toConsole)
+export const log = async (message: string, options?: Partial<LogOptions>) => {
+	const _options = { ...defaultLogOptions, ...options };
+
+	if (_options.toConsole)
 		console.log(message);
 
-	const filePath = resolve(config.LOGS_PATH, options.file + '.log');
+	const filePath = resolve(config.LOGS_PATH, _options.file + '.log');
 	const timestamp = new Date().toISOString();
 	await fsp.appendFile(filePath, `[${timestamp}] ${message.strip}\n`);
 };
@@ -34,15 +36,17 @@ export const log = async (message: string, options = defaultLogOptions) => {
  * @param error - Error
  * @param options - Options
  */
-export const logError = async (error: unknown, options = defaultLogOptions) => {
-	if (options.toConsole)
+export const logError = async (error: unknown, options?: Partial<LogOptions>) => {
+	const _options = { ...defaultLogOptions, ...options };
+
+	if (_options.toConsole)
 		console.error(error);
 
 	const formattedError = typeof error === 'string'
 		? error.strip
 		: error as string;
 
-	const filePath = resolve(config.LOGS_PATH, options.file + '.log');
+	const filePath = resolve(config.LOGS_PATH, _options.file + '.log');
 	const timestamp = new Date().toISOString();
 	await fsp.appendFile(filePath, `[${timestamp}] [ERROR] ${formattedError}\n`);
 };

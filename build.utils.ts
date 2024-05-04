@@ -100,8 +100,10 @@ export const defaultLogOptions: LogOptions = {
  * @param message - Message
  * @param options - Options
  */
-export const log = async (message: string, options = defaultLogOptions) => {
-	if (options.toConsole)
+export const log = async (message: string, options?: Partial<LogOptions>) => {
+	const _options = { ...defaultLogOptions, ...options };
+
+	if (_options.toConsole)
 		console.log(message);
 
 	const filePath = resolve(import.meta.dirname, 'build.log');
@@ -114,8 +116,10 @@ export const log = async (message: string, options = defaultLogOptions) => {
  * @param error - Error
  * @param options - Options
  */
-export const logError = async (error: unknown, options = defaultLogOptions) => {
-	if (options.toConsole)
+export const logError = async (error: unknown, options?: Partial<LogOptions>) => {
+	const _options = { ...defaultLogOptions, ...options };
+
+	if (_options.toConsole)
 		console.error(error);
 
 	const formattedError = typeof error === 'string'
