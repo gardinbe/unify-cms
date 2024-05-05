@@ -14,6 +14,7 @@
 <script setup lang="ts">
 import { useHead } from '@unhead/vue';
 import { useRoute } from 'vue-router';
+
 import CollectionItemContentForm from '~/components/Form/ContentForm/CollectionItemContentForm.vue';
 import { api } from '~/lib/services';
 import { internalError, notFound } from '~/lib/utils';

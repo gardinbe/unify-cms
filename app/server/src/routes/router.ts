@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import { pagesRouter } from '~/routes/pages/router';
+
 import { internalApiRouter } from '~/routes/internal-api/router';
+import { pagesRouter } from '~/routes/pages/router';
 import { publicApiRouter } from '~/routes/public-api/router';
 
 export const router = Router();

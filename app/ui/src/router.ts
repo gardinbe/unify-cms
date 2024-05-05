@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+
 import { lazy } from '~/lib/utils';
 
 export default createRouter({

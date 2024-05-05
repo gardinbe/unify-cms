@@ -1,8 +1,9 @@
+import { delay } from '~/lib/utils/delay';
+
 import type { EffectBuilder } from '../types';
 import { strToFloat } from '../utils';
 import type { EffectContext } from './abstract';
 import { Effect } from './abstract';
-import { delay } from '~/lib/utils/delay';
 
 interface WaitEffectContext extends EffectContext {
 	/** Delay duration in seconds. */
@@ -13,7 +14,7 @@ export class WaitEffect extends Effect<WaitEffectContext> {
 	static builder(): EffectBuilder<WaitEffect> {
 		return {
 			key: 'wait',
-			create: ctx =>
+			create: (ctx) =>
 				new WaitEffect({
 					containers: ctx.containers,
 					cursor: ctx.cursor,

@@ -1,5 +1,5 @@
 import type { EffectBuilder } from '../types';
-import type { EffectInterval, EffectContext } from './abstract';
+import type { EffectContext, EffectInterval } from './abstract';
 import { Effect } from './abstract';
 
 interface InsertEffectContext extends EffectContext {
@@ -11,7 +11,7 @@ export class InsertEffect extends Effect<InsertEffectContext> {
 	static builder(interval: EffectInterval): EffectBuilder<InsertEffect> {
 		return {
 			key: 'insert',
-			create: ctx =>
+			create: (ctx) =>
 				new InsertEffect({
 					containers: ctx.containers,
 					cursor: ctx.cursor,
@@ -27,10 +27,9 @@ export class InsertEffect extends Effect<InsertEffectContext> {
 		this.removePlaceholder(visible);
 
 		const insertChar = (charEl: HTMLElement) => {
-
-			//must remove first: even if for a split-second, the insertion of a
-			//character can extend a word, causing it to wrap at the end of a line,
-			//fucking up the position of the cursor.
+			// must remove first: even if for a split-second, the insertion of a
+			// character can extend a word, causing it to wrap at the end of a line,
+			// fucking up the position of the cursor.
 
 			invisible.firstChild?.remove();
 			visible.append(charEl);

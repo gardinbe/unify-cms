@@ -8,9 +8,8 @@ import type { SchemaProperties, SchemaPropertyType } from '~shared/types';
  */
 export const validateProperties = (schemaProperties: SchemaProperties, properties: object): boolean => {
 	if (
-		typeof properties !== 'object' ||
-		properties === null ||
-		Array.isArray(properties)
+		typeof properties !== 'object'
+		|| Array.isArray(properties)
 	)
 		return false;
 
@@ -34,7 +33,7 @@ export const validateProperties = (schemaProperties: SchemaProperties, propertie
  * @returns True/False
  */
 const validatePropertyType = (property: unknown, type: SchemaPropertyType): boolean => {
-	//do it this way in the event we want to allow integers exclusively, for example
+	// do it this way in the event we want to allow integers exclusively, for example
 	switch (type) {
 		case 'small-text':
 		case 'large-text':

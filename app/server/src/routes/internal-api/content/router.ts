@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import { internalSinglesController } from '~/routes/internal-api/content/singles';
+
 import { internalCollectionsController } from '~/routes/internal-api/content/collections';
+import { internalSinglesController } from '~/routes/internal-api/content/singles';
 
 export const internalContentRouter = Router();
 

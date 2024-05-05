@@ -1,5 +1,6 @@
 import type { Component } from 'vue';
 import { defineAsyncComponent, defineComponent, h } from 'vue';
+
 import Loader from '~/components/Loader/Loader.vue';
 
 /**
@@ -17,7 +18,7 @@ import Loader from '~/components/Loader/Loader.vue';
 export const lazy = <T extends Component>(component: Promise<T>) => {
 	const asyncComponent = defineAsyncComponent({
 		loader: async () => component,
-		//TODO: fix this type issue
+		// TODO: fix this type issue
 		loadingComponent: Loader as Component
 	});
 

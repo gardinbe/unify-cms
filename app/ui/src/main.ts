@@ -2,11 +2,12 @@ import '~/lib/scss/main.scss';
 
 import * as fontawesome from '@fortawesome/fontawesome-svg-core';
 import { faDeleteLeft, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { createApp } from 'vue';
 import { createHead } from '@unhead/vue';
-import router from '~/router';
+import { createApp } from 'vue';
+
 import App from '~/App.vue';
 import { errorHandler } from '~/lib/utils';
+import router from '~/router';
 
 // register libraries
 
@@ -17,7 +18,7 @@ fontawesome.library.add(
 
 // create app
 
-//TODO: FIX THIS
+// TODO: FIX THIS
 const app = createApp(App as object);
 
 const head = createHead();

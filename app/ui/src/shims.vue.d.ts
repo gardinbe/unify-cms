@@ -1,4 +1,4 @@
-//TODO: this might not be needed?
+// TODO: this might not be needed?
 
 declare module '*.vue' { // NOTE: ts-loader
 	import type { Component } from 'vue';

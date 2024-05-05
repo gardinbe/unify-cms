@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import { internalSchemasRouter } from '~/routes/internal-api/schemas/router';
+
 import { internalContentRouter } from '~/routes/internal-api/content/router';
+import { internalSchemasRouter } from '~/routes/internal-api/schemas/router';
 
 export const internalApiRouter = Router();
 

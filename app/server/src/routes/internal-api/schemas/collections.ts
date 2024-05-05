@@ -1,11 +1,12 @@
-import fsp from 'fs/promises';
 import fs from 'fs';
+import fsp from 'fs/promises';
 import { resolve } from 'path';
-import type { CollectionSchema } from '~shared/types';
-import type { Handler } from '~/lib/types';
+
 import config from '~/config';
-import { Collection } from '~/models';
+import type { Handler } from '~/lib/types';
 import { logError } from '~/lib/utils';
+import { Collection } from '~/models';
+import type { CollectionSchema } from '~shared/types';
 
 const getAll: Handler = async (_req, res) => {
 	let schemas: CollectionSchema[];
@@ -16,7 +17,7 @@ const getAll: Handler = async (_req, res) => {
 		);
 
 		schemas = await Promise.all(
-			fileNames.map(async fileName => (
+			fileNames.map(async (fileName) => (
 				JSON.parse(
 					await fsp.readFile(
 						resolve(config.SCHEMAS_PATH, `collections/${fileName}`),
@@ -25,7 +26,6 @@ const getAll: Handler = async (_req, res) => {
 				) as CollectionSchema
 			))
 		);
-
 	} catch (e) {
 		res.status(404).json({ error: 'No collection schema exists with this name' });
 		return;
@@ -51,7 +51,6 @@ const get: Handler = async (req, res) => {
 				'utf-8'
 			)
 		) as CollectionSchema;
-
 	} catch (e) {
 		res.status(404).json({ error: 'No collection schema exists with this name' });
 		return;
@@ -61,21 +60,24 @@ const get: Handler = async (req, res) => {
 };
 
 const post: Handler = async (req, res) => {
-	//TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json, and correct structure
 	const schema = req.body;
 
 	if (
-		!('name' in schema) ||
-		typeof schema.name !== 'string' ||
-		schema.name === 'create' ||
-		!('plural_display_name' in schema) ||
-		typeof schema.plural_display_name !== 'string' ||
-		!('singular_display_name' in schema) ||
-		typeof schema.singular_display_name !== 'string' ||
-		!('properties' in schema) ||
-		typeof schema.properties !== 'object' ||
-		schema.properties === null ||
-		Array.isArray(schema.properties)
+		typeof schema !== 'object'
+		|| schema === null
+		|| Array.isArray(schema)
+		|| !('name' in schema)
+		|| typeof schema.name !== 'string'
+		|| schema.name === 'create'
+		|| !('plural_display_name' in schema)
+		|| typeof schema.plural_display_name !== 'string'
+		|| !('singular_display_name' in schema)
+		|| typeof schema.singular_display_name !== 'string'
+		|| !('properties' in schema)
+		|| typeof schema.properties !== 'object'
+		|| schema.properties === null
+		|| Array.isArray(schema.properties)
 	) {
 		res.status(400).json({ error: 'Invalid collection schema structure' });
 		return;
@@ -96,7 +98,6 @@ const post: Handler = async (req, res) => {
 			JSON.stringify(schema, undefined, '  '),
 			'utf-8'
 		);
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);
@@ -117,21 +118,24 @@ const patch: Handler = async (req, res) => {
 		return;
 	}
 
-	//TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json, and correct structure
 	const schema = req.body;
 
 	if (
-		!('name' in schema) ||
-		typeof schema.name !== 'string' ||
-		schema.name === 'create' ||
-		!('plural_display_name' in schema) ||
-		typeof schema.plural_display_name !== 'string' ||
-		!('singular_display_name' in schema) ||
-		typeof schema.singular_display_name !== 'string' ||
-		!('properties' in schema) ||
-		typeof schema.properties !== 'object' ||
-		schema.properties === null ||
-		Array.isArray(schema.properties)
+		typeof schema !== 'object'
+		|| schema === null
+		|| Array.isArray(schema)
+		|| !('name' in schema)
+		|| typeof schema.name !== 'string'
+		|| schema.name === 'create'
+		|| !('plural_display_name' in schema)
+		|| typeof schema.plural_display_name !== 'string'
+		|| !('singular_display_name' in schema)
+		|| typeof schema.singular_display_name !== 'string'
+		|| !('properties' in schema)
+		|| typeof schema.properties !== 'object'
+		|| schema.properties === null
+		|| Array.isArray(schema.properties)
 	) {
 		res.status(400).json({ error: 'Invalid collection schema structure' });
 		return;
@@ -152,7 +156,6 @@ const patch: Handler = async (req, res) => {
 			JSON.stringify(schema, undefined, '  '),
 			'utf-8'
 		);
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);
@@ -185,7 +188,6 @@ const _delete: Handler = async (req, res) => {
 		);
 
 		await Collection.destroy({ where: { schema: name } });
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);

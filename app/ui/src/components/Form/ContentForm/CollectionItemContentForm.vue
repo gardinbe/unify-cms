@@ -34,11 +34,12 @@
 </template>
 
 <script setup lang="ts">
-import type { CollectionSchema, Item, ItemProperties } from '~shared/types';
 import { useRouter } from 'vue-router';
-import { api } from '~/lib/services';
-import ContentForm from '~/components/Form/ContentForm/ContentForm.vue';
+
 import Button from '~/components/Button/Button.vue';
+import ContentForm from '~/components/Form/ContentForm/ContentForm.vue';
+import { api } from '~/lib/services';
+import type { CollectionSchema, Item, ItemProperties } from '~shared/types';
 
 const router = useRouter();
 

@@ -1,13 +1,15 @@
-import { createServer } from 'http';
+import 'colors';
+
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
-import express, { json, urlencoded, static as staticFiles } from 'express';
 import cors from 'cors';
+import express, { json, static as staticFiles, urlencoded } from 'express';
+import { createServer } from 'http';
+
 import config from '~/config';
 import { data } from '~/databases';
+import { initDatabase, initLogsDir, initSchemaDirs, log } from '~/lib/utils';
 import { router } from '~/routes/router';
-import { initSchemaDirs, initDatabase, initLogsDir, log } from '~/lib/utils';
-import 'colors';
 
 // init directories
 
@@ -23,7 +25,7 @@ await initSchemaDirs();
 
 await initDatabase(data);
 
-//create app, init middlewares
+// create app, init middlewares
 
 void log('Creating application'.gray);
 
@@ -39,7 +41,7 @@ app.use(compression());
 
 app.use(staticFiles(config.UI_ASSETS_PATH, { index: false }));
 
-app.use(cookieParser(config.COOKIE_SECRET ?? undefined));
+app.use(cookieParser(config.COOKIE_SECRET));
 
 app.use(router);
 

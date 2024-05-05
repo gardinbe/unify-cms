@@ -10,6 +10,7 @@
 
 <script setup lang="ts">
 import { useHead } from '@unhead/vue';
+
 import SingleSchemaForm from '~/components/Form/SchemaForm/SingleSchemaForm.vue';
 
 useHead({ title: 'Unify · Schemas · Singles · Create' });

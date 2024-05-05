@@ -1,7 +1,7 @@
-import type { ItemProperties } from '~shared/types';
 import type { Handler } from '~/lib/types';
-import { Single } from '~/models';
 import { logError } from '~/lib/utils';
+import { Single } from '~/models';
+import type { ItemProperties } from '~shared/types';
 
 const get: Handler = async (req, res) => {
 	const { name } = req.params;
@@ -22,7 +22,6 @@ const get: Handler = async (req, res) => {
 		}
 
 		itemProperties = JSON.parse(rawSingle.properties) as ItemProperties;
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);

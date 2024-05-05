@@ -1,5 +1,6 @@
 import type { CreationOptional, InferAttributes, InferCreationAttributes } from 'sequelize';
 import { DataTypes, Model } from 'sequelize';
+
 import { data } from '~/databases';
 
 export class Single extends Model<

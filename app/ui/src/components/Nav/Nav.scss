@@ -19,7 +19,7 @@
 		justify-content: space-between;
 	}
 
-	&[data-menu-open="true"] {
+	&[data-menu-open='true'] {
 		background-color: $bg-secondary-d-1;
 
 		#{$e} {

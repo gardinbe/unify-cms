@@ -1,8 +1,9 @@
+import { delay } from '~/lib/utils';
+
 import type { EffectBuilder } from '../types';
 import { strToInt } from '../utils';
-import type { EffectInterval, EffectContext } from './abstract';
+import type { EffectContext, EffectInterval } from './abstract';
 import { Effect } from './abstract';
-import { delay } from '~/lib/utils';
 
 export type DeleteEffectInterval = EffectInterval & {
 	/** Delay duration after the first character deletion. */
@@ -19,7 +20,7 @@ export class DeleteEffect extends Effect<DeleteEffectContext> {
 	static builder(interval: DeleteEffectInterval): EffectBuilder<DeleteEffect> {
 		return {
 			key: 'delete',
-			create: ctx =>
+			create: (ctx) =>
 				new DeleteEffect({
 					containers: ctx.containers,
 					cursor: ctx.cursor,
@@ -31,11 +32,11 @@ export class DeleteEffect extends Effect<DeleteEffectContext> {
 		};
 	}
 
-	//TODO: currently, the main limitation is that its very annoying to
-	//be able to climb up the dom tree and delete characters from previous
-	//character containers... would need to keep track of all active
-	//containers... cannot be bothered !
-	//for now, just being able to work with the current containers is fine.
+	// TODO: currently, the main limitation is that its very annoying to
+	// be able to climb up the dom tree and delete characters from previous
+	// character containers... would need to keep track of all active
+	// containers... cannot be bothered !
+	// for now, just being able to work with the current containers is fine.
 
 	async apply() {
 		const { visible } = this.ctx.containers;
@@ -87,9 +88,8 @@ export class DeleteEffect extends Effect<DeleteEffectContext> {
 	}
 
 	private removeLastChild(container: HTMLElement) {
-
-		//zero-width-space placeholder hack to keep empty spans with atleast
-		//one character, as otherwise empty spans will collapse their height.
+		// zero-width-space placeholder hack to keep empty spans with atleast
+		// one character, as otherwise empty spans will collapse their height.
 
 		if (container.firstChild === container.lastChild)
 			this.addPlaceholder(container);

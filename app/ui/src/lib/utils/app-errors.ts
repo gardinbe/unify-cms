@@ -59,7 +59,7 @@ export const errorHandler = (router: Router) =>
 
 			case AppError.BAD_REQUEST:
 				alert(value);
-				//TODO: maybe not ideal
+				// TODO: maybe not ideal
 				window.history.go(-1);
 				break;
 

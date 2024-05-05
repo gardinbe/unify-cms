@@ -1,6 +1,7 @@
+import { configDotenv } from 'dotenv';
 import { resolve } from 'path';
 import { env } from 'process';
-import { configDotenv } from 'dotenv';
+
 import { parseEnv } from '~shared/utils';
 
 configDotenv({ path: resolve(import.meta.dirname, '../.env') });

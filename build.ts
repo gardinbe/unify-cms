@@ -1,7 +1,9 @@
+import 'colors';
+
 import fsp from 'fs/promises';
 import { resolve } from 'path';
+
 import { exec, getLatestPackageVersion, log, runTasks } from './build.utils';
-import 'colors';
 
 const pkgJson = await import('./package.json');
 

@@ -1,7 +1,7 @@
-import type { Item, ItemProperties } from '~shared/types';
 import type { Handler } from '~/lib/types';
-import { Collection } from '~/models';
 import { logError } from '~/lib/utils';
+import { Collection } from '~/models';
+import type { Item, ItemProperties } from '~shared/types';
 
 const get: Handler = async (req, res) => {
 	const { name } = req.params;
@@ -16,13 +16,12 @@ const get: Handler = async (req, res) => {
 	try {
 		items = (await Collection.findAll({ where: { schema: name } }))
 			.map(
-				item => ({
+				(item) => ({
 					id: item.id,
 					schema: item.schema,
 					properties: JSON.parse(item.properties) as ItemProperties
 				})
 			);
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);
@@ -47,7 +46,7 @@ const getItem: Handler = async (req, res) => {
 
 	const id = parseInt(rawId);
 
-	if (!Number.isInteger(id)) { //includes NaN check
+	if (!Number.isInteger(id)) { // includes NaN check
 		res.status(400).json({ error: 'Invalid collection item ID' });
 		return;
 	}
@@ -67,7 +66,6 @@ const getItem: Handler = async (req, res) => {
 			schema: rawItem.schema,
 			properties: JSON.parse(rawItem.properties) as ItemProperties
 		};
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);
@@ -85,13 +83,13 @@ const postItem: Handler = async (req, res) => {
 		return;
 	}
 
-	//TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json, and correct structure
 	const properties = req.body;
 
 	if (
-		typeof properties !== 'object' ||
-		properties === null ||
-		Array.isArray(properties)
+		typeof properties !== 'object'
+		|| properties === null
+		|| Array.isArray(properties)
 	) {
 		res.status(400).json({ error: 'Invalid collection item structure' });
 		return;
@@ -104,7 +102,6 @@ const postItem: Handler = async (req, res) => {
 			schema: name,
 			properties: JSON.stringify(properties)
 		});
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);
@@ -132,18 +129,18 @@ const patchItem: Handler = async (req, res) => {
 
 	const id = parseInt(rawId);
 
-	if (!Number.isInteger(id)) { //includes NaN check
+	if (!Number.isInteger(id)) { // includes NaN check
 		res.status(400).json({ error: 'Invalid collection item ID' });
 		return;
 	}
 
-	//TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json, and correct structure
 	const properties = req.body;
 
 	if (
-		typeof properties !== 'object' ||
-		properties === null ||
-		Array.isArray(properties)
+		typeof properties !== 'object'
+		|| properties === null
+		|| Array.isArray(properties)
 	) {
 		res.status(400).json({ error: 'Invalid collection item structure' });
 		return;
@@ -158,7 +155,6 @@ const patchItem: Handler = async (req, res) => {
 		await Collection.update({
 			properties: JSON.stringify(properties)
 		}, { where: { schema: name, id } });
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);
@@ -183,7 +179,7 @@ const deleteItem: Handler = async (req, res) => {
 
 	const id = parseInt(rawId);
 
-	if (!Number.isInteger(id)) { //includes NaN check
+	if (!Number.isInteger(id)) { // includes NaN check
 		res.status(400).json({ error: 'Invalid collection item ID' });
 		return;
 	}
@@ -195,7 +191,6 @@ const deleteItem: Handler = async (req, res) => {
 		}
 
 		await Collection.destroy({ where: { schema: name, id } });
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);

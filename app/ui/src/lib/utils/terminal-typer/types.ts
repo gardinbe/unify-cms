@@ -1,5 +1,5 @@
-import type { Effect } from './effects';
 import type { Cursor } from './cursor';
+import type { Effect } from './effects';
 
 /** Object of visible and invisible character containers. */
 export interface CharContainers {

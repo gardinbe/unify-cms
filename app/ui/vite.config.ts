@@ -1,7 +1,7 @@
-import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue';
-import type { UserConfig } from 'vite';
 import root from 'app-root-path';
+import { resolve } from 'path';
+import type { UserConfig } from 'vite';
 
 const config: UserConfig = {
 	plugins: [

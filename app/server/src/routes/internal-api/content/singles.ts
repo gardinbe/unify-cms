@@ -1,7 +1,7 @@
-import type { Item, ItemProperties } from '~shared/types';
 import type { Handler } from '~/lib/types';
-import { Single } from '~/models';
 import { logError } from '~/lib/utils';
+import { Single } from '~/models';
+import type { Item, ItemProperties } from '~shared/types';
 
 const get: Handler = async (req, res) => {
 	const { name } = req.params;
@@ -26,7 +26,6 @@ const get: Handler = async (req, res) => {
 			schema: rawSingle.schema,
 			properties: JSON.parse(rawSingle.properties) as ItemProperties
 		};
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);
@@ -44,13 +43,13 @@ const post: Handler = async (req, res) => {
 		return;
 	}
 
-	//TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json, and correct structure
 	const properties = req.body;
 
 	if (
-		typeof properties !== 'object' ||
-		properties === null ||
-		Array.isArray(properties)
+		typeof properties !== 'object'
+		|| properties === null
+		|| Array.isArray(properties)
 	) {
 		res.status(400).json({ error: 'Invalid single structure' });
 		return;
@@ -61,7 +60,6 @@ const post: Handler = async (req, res) => {
 			schema: name,
 			properties: JSON.stringify(properties)
 		});
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);
@@ -79,13 +77,13 @@ const patch: Handler = async (req, res) => {
 		return;
 	}
 
-	//TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json, and correct structure
 	const properties = req.body;
 
 	if (
-		typeof properties !== 'object' ||
-		properties === null ||
-		Array.isArray(properties)
+		typeof properties !== 'object'
+		|| properties === null
+		|| Array.isArray(properties)
 	) {
 		res.status(400).json({ error: 'Invalid single structure' });
 		return;
@@ -100,7 +98,6 @@ const patch: Handler = async (req, res) => {
 		await Single.update({
 			properties: JSON.stringify(properties)
 		}, { where: { schema: name } });
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);

@@ -14,6 +14,7 @@
 <script setup lang="ts">
 import { useHead } from '@unhead/vue';
 import { useRoute } from 'vue-router';
+
 import SingleContentForm from '~/components/Form/ContentForm/SingleContentForm.vue';
 import { api } from '~/lib/services';
 import { capitalize, notFound } from '~/lib/utils';

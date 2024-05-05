@@ -1,10 +1,11 @@
+import 'colors';
+
 import type { ExecException } from 'child_process';
 import { exec as cp_exec } from 'child_process';
+import fsp from 'fs/promises';
 import { resolve } from 'path';
 import { exit } from 'process';
 import { promisify } from 'util';
-import fsp from 'fs/promises';
-import 'colors';
 
 export interface Task {
 	/** Name of the task. */
@@ -53,7 +54,6 @@ export const runTask = async (task: Task, options = defaultRunTaskOptions) => {
 	try {
 		await task.operation();
 		await log(`Finished in ${elapsed()}s`.gray + '\n');
-
 	} catch (e) {
 		await log(`Failed after ${elapsed()}s`.red + '\n');
 
@@ -74,8 +74,8 @@ export const runTask = async (task: Task, options = defaultRunTaskOptions) => {
  */
 export const exec = async (command: string) => {
 	const { stderr, stdout } = await promisify(cp_exec)(command)
-		.catch((e: ExecException) => {
-			throw e.stderr;
+		.catch((e: unknown) => {
+			throw new Error((e as ExecException).stderr);
 		});
 
 	if (stdout)
@@ -131,9 +131,7 @@ export const logError = async (error: unknown, options?: Partial<LogOptions>) =>
 	await fsp.appendFile(filePath, `[${timestamp}] [ERROR] ${formattedError}\n`);
 };
 
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 /**
  * Returns the latest version of an npm package.

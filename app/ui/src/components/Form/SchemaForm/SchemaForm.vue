@@ -95,9 +95,10 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import type { SchemaProperties, SchemaProperty, SchemaPropertyType } from '~shared/types';
 import { reactive } from 'vue';
+
 import Button from '~/components/Button/Button.vue';
+import type { SchemaProperties, SchemaProperty, SchemaPropertyType } from '~shared/types';
 
 const props = defineProps<{
 	mode: 'create' | 'update';
@@ -105,9 +106,9 @@ const props = defineProps<{
 	onSubmit: (schema: SchemaProperties) => void | Promise<void>;
 }>();
 
-type FlatSchemaProperty = { name: string; } & SchemaProperty;
+type FlatSchemaProperty = SchemaProperty & { name: string };
 
-//TODO: scuffed
+// TODO: scuffed
 const flatProperties = reactive<FlatSchemaProperty[]>(
 	props.properties
 		? Array.from(Object.entries(props.properties)).map(
@@ -121,7 +122,7 @@ const addProperty = () => {
 		name: '',
 		display_name: '',
 		description: '',
-		type: '' as SchemaPropertyType //TODO: scuffed?
+		type: '' as SchemaPropertyType // TODO: scuffed?
 	});
 };
 
@@ -141,6 +142,7 @@ const submit = async (ev: Event) => {
 		if (
 			!property.name
 			|| !property.display_name
+			// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 			|| !property.type
 		) {
 			alert('An API identifier, display name and type must be set for all properties');

@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import { internalSinglesSchemaController } from '~/routes/internal-api/schemas/singles';
+
 import { internalCollectionsSchemaController } from '~/routes/internal-api/schemas/collections';
+import { internalSinglesSchemaController } from '~/routes/internal-api/schemas/singles';
 
 export const internalSchemasRouter = Router();
 
@@ -15,4 +16,3 @@ internalSchemasRouter.get('/collections/:name', internalCollectionsSchemaControl
 internalSchemasRouter.post('/collections', internalCollectionsSchemaController.post);
 internalSchemasRouter.patch('/collections/:name', internalCollectionsSchemaController.patch);
 internalSchemasRouter.delete('/collections/:name', internalCollectionsSchemaController.delete);
-

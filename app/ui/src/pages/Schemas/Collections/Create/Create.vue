@@ -10,6 +10,7 @@
 
 <script setup lang="ts">
 import { useHead } from '@unhead/vue';
+
 import CollectionSchemaForm from '~/components/Form/SchemaForm/CollectionSchemaForm.vue';
 
 useHead({ title: 'Unify · Schemas · Collections · Create' });

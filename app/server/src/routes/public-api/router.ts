@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import { publicSinglesController } from '~/routes/public-api/singles';
+
 import { publicCollectionsController } from '~/routes/public-api/collections';
+import { publicSinglesController } from '~/routes/public-api/singles';
 
 export const publicApiRouter = Router();
 

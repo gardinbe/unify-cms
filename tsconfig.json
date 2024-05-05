@@ -1,6 +1,8 @@
 {
 	"compilerOptions": {
-		//~~~ General
+		//
+		// general
+		//
 		"module": "ESNext",
 		"moduleResolution": "Bundler",
 		"noEmit": true,
@@ -14,7 +16,9 @@
 		// "incremental": true, causes warnings with @rollup/typescript when building
 		"emitDecoratorMetadata": true,
 		"target": "ESNext",
-		//~~~ Type checking
+		//
+		// type checking
+		//
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
 		"alwaysStrict": true,
@@ -24,7 +28,7 @@
 		"noImplicitOverride": true,
 		"noImplicitReturns": true,
 		"noImplicitThis": true,
-		// "noPropertyAccessFromIndexSignature": true,
+		"noPropertyAccessFromIndexSignature": false,
 		"noUncheckedIndexedAccess": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
@@ -33,10 +37,11 @@
 		"strictFunctionTypes": true,
 		"strictNullChecks": true,
 		"strictPropertyInitialization": true,
-		"useUnknownInCatchVariables": true,
+		"useUnknownInCatchVariables": true
 	},
 	"include": [
-		".eslintrc.cjs",
+		"eslint.config.js",
+		"prettier.config.js",
 		"app/shared/**/*.ts",
 		"build.ts",
 		"build.utils.ts"

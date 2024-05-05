@@ -1,6 +1,6 @@
-import type { ApiSuccess, Item, ItemProperties, CreatedItem, CollectionSchema, CreatedSchema, Schema, SingleSchema, ApiError } from '~shared/types';
 import { ApiService } from '~/lib/classes/api-service.class';
 import { badRequest, internalError, notFound, serverError } from '~/lib/utils';
+import type { ApiError, ApiSuccess, CollectionSchema, CreatedItem, CreatedSchema, Item, ItemProperties, Schema, SingleSchema } from '~shared/types';
 
 export class UnifyApiService extends ApiService {
 	async getAllSingleSchemas() {
@@ -75,8 +75,8 @@ export class UnifyApiService extends ApiService {
 			[404]
 		);
 
-		//TODO: perhaps not ideal, wrap in success response object maybe?
-		//if 404, return null
+		// TODO: perhaps not ideal, wrap in success response object maybe?
+		// if 404, return null
 		return !('error' in item)
 			? item
 			: null;

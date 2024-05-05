@@ -9,6 +9,7 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
+
 import AsyncComponent from '~/components/AsyncComponent/AsyncComponent.vue';
 import type { MenuItem } from '~/components/Nav/Nav.vue';
 import Nav from '~/components/Nav/Nav.vue';

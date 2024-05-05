@@ -8,9 +8,9 @@
 </template>
 
 <script setup lang="ts">
-import type { SingleSchema, Item, ItemProperties } from '~shared/types';
-import { api } from '~/lib/services';
 import ContentForm from '~/components/Form/ContentForm/ContentForm.vue';
+import { api } from '~/lib/services';
+import type { Item, ItemProperties, SingleSchema } from '~shared/types';
 
 const props = defineProps<{
 	schema: SingleSchema;

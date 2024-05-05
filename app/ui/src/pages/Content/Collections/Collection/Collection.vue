@@ -4,7 +4,7 @@
 		:create-item="createMenuItem"
 	>
 		<RouterView
-			:key="$route.params.id as string"
+			:key="($route.params.id as string)"
 			v-slot="{ Component }"
 		>
 			<AsyncComponent
@@ -28,6 +28,7 @@
 <script setup lang="ts">
 import { useHead } from '@unhead/vue';
 import { useRoute, useRouter } from 'vue-router';
+
 import AsyncComponent from '~/components/AsyncComponent/AsyncComponent.vue';
 import type { MenuCreateItem, MenuItem } from '~/components/ContentWithSideMenu/ContentWithSideMenu.vue';
 import ContentWithSideMenu from '~/components/ContentWithSideMenu/ContentWithSideMenu.vue';
@@ -50,7 +51,7 @@ useHead({ title: `Unify · Content · Collections · ${schema.plural_display_nam
 const items = await api.getCollectionItems(name);
 
 const menuItems: MenuItem[] = items.map(
-	item => ({
+	(item) => ({
 		label: item.properties[schema.item_display_property] as string,
 		link: `${router.resolve({ name: 'collection-content' }).href}/${item.id}`
 	})

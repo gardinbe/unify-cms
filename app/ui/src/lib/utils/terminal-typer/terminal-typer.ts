@@ -1,11 +1,13 @@
 import { unionWith } from 'ramda';
 import type { DeepRequired } from 'ts-essentials';
-import type { Effect, EffectInterval, DeleteEffectInterval } from './effects';
-import { WaitEffect, DeleteEffect, InsertEffect } from './effects';
+
+import { escapeRegex, mergeShallowRight, throwExp } from '~/lib/utils';
+
 import type { CursorOptions } from './cursor';
 import { Cursor } from './cursor';
-import type { EffectBuilder, CharContainers } from './types';
-import { escapeRegex, mergeShallowRight, throwExp } from '~/lib/utils';
+import type { DeleteEffectInterval, Effect, EffectInterval } from './effects';
+import { DeleteEffect, InsertEffect, WaitEffect } from './effects';
+import type { CharContainers, EffectBuilder } from './types';
 
 /**
  * Options for a terminal-typer parser.
@@ -197,9 +199,9 @@ export class TerminalTyper {
 
 		el.style.visibility = 'hidden';
 
-		//'g' flag to allow successive matches and keep regex state (needed for `matchAll`, `replaceAll`)
-		//'d' flag needed for `match.index`
-		//'s' flag to allow modifiers to span multiple lines
+		// 'g' flag to allow successive matches and keep regex state (needed for `matchAll`, `replaceAll`)
+		// 'd' flag needed for `match.index`
+		// 's' flag to allow modifiers to span multiple lines
 
 		this.patterns = {
 			effect:
@@ -220,7 +222,7 @@ export class TerminalTyper {
 					)
 			},
 			effectSplit:
-				//no 'g' flag!
+				// no 'g' flag!
 				new RegExp(String.raw`^\s*(.*?)\s*${this.options.effects.symbols.separator}\s*(.*?)\s*$`, 'ds')
 		};
 
@@ -267,7 +269,7 @@ export class TerminalTyper {
 	 */
 	private parse(node: Node): Effect[] {
 		return this.getTextNodes(node)
-			.flatMap(textNode =>
+			.flatMap((textNode) =>
 				this.parseEffects(
 					textNode.textContent!,
 					this.createContainerEls(textNode)
@@ -282,7 +284,7 @@ export class TerminalTyper {
 	 */
 	private getTextNodes(node: Node): Text[] {
 		return Array.from(node.childNodes)
-			.flatMap(child =>
+			.flatMap((child) =>
 				child.nodeType !== Node.TEXT_NODE
 					? this.getTextNodes(child)
 					: child.textContent === '\n'
@@ -336,7 +338,7 @@ export class TerminalTyper {
 		let lastMatchEndIndex = 0;
 
 		for (const match of matches) {
-			//get all the plain text leading up to this effect string
+			// get all the plain text leading up to this effect string
 			const leadingText = this.sanitize(
 				text.slice(lastMatchEndIndex, match.index)
 			);
@@ -359,8 +361,8 @@ export class TerminalTyper {
 			lastMatchEndIndex = match.index + match[0].length;
 		}
 
-		//get all the remaining text after the last effect string, or
-		//if no effect string existed.
+		// get all the remaining text after the last effect string, or
+		// if no effect string existed.
 		const trailingText = this.sanitize(
 			text.slice(lastMatchEndIndex)
 		);
@@ -413,7 +415,7 @@ export class TerminalTyper {
 
 		const builder = this.options.effects.builders
 			.find(
-				builder => builder.key === key
+				(builder) => builder.key === key
 			)
 			?? throwExp(`Unrecognized terminal-typer effect '${key}'`);
 

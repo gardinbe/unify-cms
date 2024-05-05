@@ -6,6 +6,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
+
 import type { TerminalTyperOptions } from '~/lib/utils';
 import { TerminalTyper } from '~/lib/utils';
 

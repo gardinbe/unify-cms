@@ -1,6 +1,7 @@
+import { delay, randomDelay } from '~/lib/utils';
+
 import type { Cursor } from '../../cursor';
 import type { CharContainers } from '../../types';
-import { delay, randomDelay } from '~/lib/utils';
 
 /** An effect interval duration and style. */
 export type EffectInterval = {

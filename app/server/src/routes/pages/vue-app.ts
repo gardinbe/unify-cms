@@ -1,4 +1,5 @@
 import { resolve } from 'path';
+
 import config from '~/config';
 import type { Handler } from '~/lib/types';
 

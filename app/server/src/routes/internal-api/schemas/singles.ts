@@ -1,11 +1,12 @@
-import fsp from 'fs/promises';
 import fs from 'fs';
+import fsp from 'fs/promises';
 import { resolve } from 'path';
-import type { SingleSchema } from '~shared/types';
-import type { Handler } from '~/lib/types';
+
 import config from '~/config';
-import { Single } from '~/models';
+import type { Handler } from '~/lib/types';
 import { logError } from '~/lib/utils';
+import { Single } from '~/models';
+import type { SingleSchema } from '~shared/types';
 
 const getAll: Handler = async (_req, res) => {
 	let schemas: SingleSchema[];
@@ -16,7 +17,7 @@ const getAll: Handler = async (_req, res) => {
 		);
 
 		schemas = await Promise.all(
-			fileNames.map(async fileName => (
+			fileNames.map(async (fileName) => (
 				JSON.parse(
 					await fsp.readFile(
 						resolve(config.SCHEMAS_PATH, `singles/${fileName}`),
@@ -25,7 +26,6 @@ const getAll: Handler = async (_req, res) => {
 				) as SingleSchema
 			))
 		);
-
 	} catch (e) {
 		res.status(404).json({ error: 'No single schema exists with this name' });
 		return;
@@ -51,7 +51,6 @@ const get: Handler = async (req, res) => {
 				'utf-8'
 			)
 		) as SingleSchema;
-
 	} catch (e) {
 		res.status(404).json({ error: 'No single schema exists with this name' });
 		return;
@@ -61,19 +60,22 @@ const get: Handler = async (req, res) => {
 };
 
 const post: Handler = async (req, res) => {
-	//TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json, and correct structure
 	const schema = req.body;
 
 	if (
-		!('name' in schema) ||
-		typeof schema.name !== 'string' ||
-		schema.name === 'create' ||
-		!('display_name' in schema) ||
-		typeof schema.display_name !== 'string' ||
-		!('properties' in schema) ||
-		typeof schema.properties !== 'object' ||
-		schema.properties === null ||
-		Array.isArray(schema.properties)
+		typeof schema !== 'object'
+		|| schema === null
+		|| Array.isArray(schema)
+		|| !('name' in schema)
+		|| typeof schema.name !== 'string'
+		|| schema.name === 'create'
+		|| !('display_name' in schema)
+		|| typeof schema.display_name !== 'string'
+		|| !('properties' in schema)
+		|| typeof schema.properties !== 'object'
+		|| schema.properties === null
+		|| Array.isArray(schema.properties)
 	) {
 		res.status(400).json({ error: 'Invalid single schema structure' });
 		return;
@@ -94,7 +96,6 @@ const post: Handler = async (req, res) => {
 			JSON.stringify(schema, undefined, '  '),
 			'utf-8'
 		);
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);
@@ -115,19 +116,22 @@ const patch: Handler = async (req, res) => {
 		return;
 	}
 
-	//TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json, and correct structure
 	const schema = req.body;
 
 	if (
-		!('name' in schema) ||
-		typeof schema.name !== 'string' ||
-		schema.name === 'create' ||
-		!('display_name' in schema) ||
-		typeof schema.display_name !== 'string' ||
-		!('properties' in schema) ||
-		typeof schema.properties !== 'object' ||
-		schema.properties === null ||
-		Array.isArray(schema.properties)
+		typeof schema !== 'object'
+		|| schema === null
+		|| Array.isArray(schema)
+		|| !('name' in schema)
+		|| typeof schema.name !== 'string'
+		|| schema.name === 'create'
+		|| !('display_name' in schema)
+		|| typeof schema.display_name !== 'string'
+		|| !('properties' in schema)
+		|| typeof schema.properties !== 'object'
+		|| schema.properties === null
+		|| Array.isArray(schema.properties)
 	) {
 		res.status(400).json({ error: 'Invalid single schema structure' });
 		return;
@@ -148,7 +152,6 @@ const patch: Handler = async (req, res) => {
 			JSON.stringify(schema, undefined, '  '),
 			'utf-8'
 		);
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);
@@ -181,7 +184,6 @@ const _delete: Handler = async (req, res) => {
 		);
 
 		await Single.destroy({ where: { schema: name } });
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);

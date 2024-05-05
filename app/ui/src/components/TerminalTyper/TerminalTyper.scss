@@ -37,7 +37,7 @@
 			left 20ms ease,
 			top 20ms ease;
 
-		&[data-blinking="true"] {
+		&[data-blinking='true'] {
 			@keyframes Blink {
 				0% {
 					opacity: 1;

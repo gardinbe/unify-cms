@@ -27,7 +27,7 @@ export const parseEnv = {
 			return null;
 
 		const parsedValue = parseInt(value);
-		if (!Number.isInteger(parsedValue)) //includes NaN check
+		if (!Number.isInteger(parsedValue)) // includes NaN check
 			return null;
 
 		return parsedValue;

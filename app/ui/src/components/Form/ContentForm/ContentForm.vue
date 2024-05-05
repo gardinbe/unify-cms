@@ -23,7 +23,7 @@
 					</p>
 					<textarea
 						v-if="getPropertyInputType(schemaProperty.type) === 'textarea'"
-						v-model="properties[name as string] as string"
+						v-model="(properties[name as string] as string)"
 						:placeholder="capitalize(schemaProperty.display_name) + '...'"
 					/>
 					<input
@@ -50,10 +50,11 @@
 </template>
 
 <script setup lang="ts">
-import type { ItemProperties, SchemaProperties, SchemaPropertyType } from '~shared/types';
 import { reactive } from 'vue';
+
 import Button from '~/components/Button/Button.vue';
 import { capitalize, validateProperties } from '~/lib/utils';
+import type { ItemProperties, SchemaProperties, SchemaPropertyType } from '~shared/types';
 
 const props = defineProps<{
 	mode: 'create' | 'update';

@@ -4,7 +4,7 @@
 		:create-item="createMenuItem"
 	>
 		<RouterView
-			:key="$route.params.name as string"
+			:key="($route.params.name as string)"
 			v-slot="{ Component }"
 		>
 			<AsyncComponent
@@ -38,6 +38,7 @@
 <script setup lang="ts">
 import { useHead } from '@unhead/vue';
 import { useRouter } from 'vue-router';
+
 import AsyncComponent from '~/components/AsyncComponent/AsyncComponent.vue';
 import type { MenuCreateItem, MenuItem } from '~/components/ContentWithSideMenu/ContentWithSideMenu.vue';
 import ContentWithSideMenu from '~/components/ContentWithSideMenu/ContentWithSideMenu.vue';
@@ -51,7 +52,7 @@ const router = useRouter();
 const schemas = await api.getAllCollectionSchemas();
 
 const menuItems: MenuItem[] = schemas.map(
-	schema => ({
+	(schema) => ({
 		label: capitalize(schema.plural_display_name),
 		link: `${router.resolve({ name: 'collection-schemas' }).href}/${schema.name}`
 	})

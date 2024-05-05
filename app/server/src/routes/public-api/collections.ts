@@ -1,7 +1,7 @@
-import type { ItemProperties } from '~shared/types';
 import type { Handler } from '~/lib/types';
-import { Collection } from '~/models';
 import { logError } from '~/lib/utils';
+import { Collection } from '~/models';
+import type { ItemProperties } from '~shared/types';
 
 const get: Handler = async (req, res) => {
 	const { name } = req.params;
@@ -16,12 +16,11 @@ const get: Handler = async (req, res) => {
 	try {
 		itemsProperties = (await Collection.findAll({ where: { schema: name } }))
 			.map(
-				item => ({
-					id: item.id, //TODO: reconsider slapping id with properties?
+				(item) => ({
+					id: item.id, // TODO: reconsider slapping id with properties?
 					...JSON.parse(item.properties) as ItemProperties
 				})
 			);
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);
@@ -46,7 +45,7 @@ const getItem: Handler = async (req, res) => {
 
 	const id = parseInt(rawId);
 
-	if (!Number.isInteger(id)) { //includes NaN check
+	if (!Number.isInteger(id)) { // includes NaN check
 		res.status(400).json({ error: 'Invalid collection item ID' });
 		return;
 	}
@@ -62,10 +61,9 @@ const getItem: Handler = async (req, res) => {
 		}
 
 		itemProperties = {
-			id: rawItem.id, //TODO: reconsider slapping id with properties?
+			id: rawItem.id, // TODO: reconsider slapping id with properties?
 			...JSON.parse(rawItem.properties) as ItemProperties
 		};
-
 	} catch (e) {
 		res.status(500).json({ error: 'Internal server error' });
 		void logError(e);

@@ -1,23 +1,23 @@
 // logic
 
-@import "logic";
+@import 'logic';
 
 // libs
 
-@import "@/bootstrap/scss/variables";
-@import "@/bootstrap/scss/mixins/breakpoints";
-@import "@/bootstrap/scss/vendor/rfs";
-@import "@/bootstrap/scss/bootstrap-reboot";
-@import "@/bootstrap/scss/containers";
-@import "@/bootstrap/scss/utilities";
-@import "@/bootstrap/scss/utilities/api";
+@import '@/bootstrap/scss/variables';
+@import '@/bootstrap/scss/mixins/breakpoints';
+@import '@/bootstrap/scss/vendor/rfs';
+@import '@/bootstrap/scss/bootstrap-reboot';
+@import '@/bootstrap/scss/containers';
+@import '@/bootstrap/scss/utilities';
+@import '@/bootstrap/scss/utilities/api';
 
 // fonts
 
-@import "fonts/Inter";
+@import 'fonts/Inter';
 
 // global
 
-@import "base";
-@import "utils";
-@import "transitions";
+@import 'base';
+@import 'utils';
+@import 'transitions';

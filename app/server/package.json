@@ -1,58 +1,50 @@
 {
-  "private": true,
-  "name": "server",
-  "version": "0.0.0",
-  "description": "",
-  "author": "Ben Gardiner <gardinbe@gmail.com>",
-  "license": "ISC",
-  "type": "module",
-  "main": "dist/server.js",
-  "engines": {
-    "node": ">=20.11"
-  },
-  "scripts": {
-    "start": "env-cmd --silent node dist/server.js",
-    "dev": "env-cmd --silent tsx watch src/server.ts",
-    "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
-    "build-external": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --dir ../../build"
-  },
-  "dependencies": {
-    "app-root-path": "^3.1.0",
-    "bcrypt": "^5.1.1",
-    "colors": "^1.4.0",
-    "compression": "^1.7.4",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "env-cmd": "^10.1.0",
-    "express": "^4.19.2",
-    "sequelize": "^6.37.3",
-    "sqlite3": "^5.1.7",
-    "tslib": "^2.6.2"
-  },
-  "devDependencies": {
-    "@rollup/plugin-alias": "^5.1.0",
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-typescript": "^11.1.6",
-    "@types/bcrypt": "^5.0.2",
-    "@types/compression": "^1.7.5",
-    "@types/cookie-parser": "^1.4.7",
-    "@types/cors": "^2.8.17",
-    "@types/eslint": "^8.56.10",
-    "@types/express": "^4.17.21",
-    "@types/rollup-plugin-auto-external": "^2.0.5",
-    "@typescript-eslint/eslint-plugin": "^7.7.1",
-    "@typescript-eslint/parser": "^7.7.1",
-    "eslint": "^8.56.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-sort-exports": "^0.9.1",
-    "eslint-plugin-tsdoc": "^0.2.17",
-    "rollup": "^4.16.4",
-    "rollup-plugin-auto-external": "^2.0.0",
-    "tsx": "^4.8.2",
-    "typescript": "^5.4.5"
-  }
+	"private": true,
+	"name": "server",
+	"version": "0.0.0",
+	"description": "",
+	"author": "Ben Gardiner <gardinbe@gmail.com>",
+	"license": "ISC",
+	"type": "module",
+	"main": "dist/server.js",
+	"engines": {
+		"node": ">=20.11"
+	},
+	"scripts": {
+		"start": "env-cmd --silent node dist/server.js",
+		"dev": "env-cmd --silent tsx watch src/server.ts",
+		"build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+		"build-external": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --dir ../../build"
+	},
+	"dependencies": {
+		"app-root-path": "^3.1.0",
+		"bcrypt": "^5.1.1",
+		"colors": "^1.4.0",
+		"compression": "^1.7.4",
+		"cookie-parser": "^1.4.6",
+		"cors": "^2.8.5",
+		"dotenv": "^16.4.5",
+		"env-cmd": "^10.1.0",
+		"express": "^4.19.2",
+		"sequelize": "^6.37.3",
+		"sqlite3": "^5.1.7",
+		"tslib": "^2.6.2"
+	},
+	"devDependencies": {
+		"@rollup/plugin-alias": "^5.1.0",
+		"@rollup/plugin-commonjs": "^25.0.7",
+		"@rollup/plugin-json": "^6.1.0",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-typescript": "^11.1.6",
+		"@types/bcrypt": "^5.0.2",
+		"@types/compression": "^1.7.5",
+		"@types/cookie-parser": "^1.4.7",
+		"@types/cors": "^2.8.17",
+		"@types/express": "^4.17.21",
+		"@types/rollup-plugin-auto-external": "^2.0.5",
+		"rollup": "^4.16.4",
+		"rollup-plugin-auto-external": "^2.0.0",
+		"tsx": "^4.8.2",
+		"typescript": "^5.4.5"
+	}
 }

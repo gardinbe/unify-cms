@@ -198,8 +198,8 @@ select {
 	}
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+input[type='radio'],
+input[type='checkbox'] {
 	$size: 1.5rem;
 	width: $size;
 	height: $size;
@@ -214,7 +214,7 @@ textarea {
 select {
 	cursor: pointer;
 
-	&:has(option:checked[value=""]) {
+	&:has(option:checked[value='']) {
 		color: $bg-primary-l-3;
 	}
 }

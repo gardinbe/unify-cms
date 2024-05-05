@@ -34,6 +34,7 @@
 <script setup lang="ts">
 import { useHead } from '@unhead/vue';
 import { useRouter } from 'vue-router';
+
 import AsyncComponent from '~/components/AsyncComponent/AsyncComponent.vue';
 import type { MenuItem } from '~/components/ContentWithSideMenu/ContentWithSideMenu.vue';
 import ContentWithSideMenu from '~/components/ContentWithSideMenu/ContentWithSideMenu.vue';

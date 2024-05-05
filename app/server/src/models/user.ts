@@ -1,6 +1,7 @@
+import { compare, genSalt, hash } from 'bcrypt';
 import type { CreationOptional, InferAttributes, InferCreationAttributes } from 'sequelize';
 import { DataTypes, Model } from 'sequelize';
-import { compare, genSalt, hash } from 'bcrypt';
+
 import { data } from '~/databases';
 
 export enum UserType {
@@ -30,11 +31,11 @@ export class User extends Model<
 	}
 }
 
-User.afterCreate(async user => {
+User.afterCreate(async (user) => {
 	user.password = await hash(user.password, await genSalt(10));
 });
 
-User.afterUpdate(async user => {
+User.afterUpdate(async (user) => {
 	if (!user.changed('password'))
 		return;
 

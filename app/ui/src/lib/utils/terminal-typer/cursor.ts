@@ -1,4 +1,5 @@
 import type { DeepRequired } from 'ts-essentials';
+
 import { mergeShallowRight } from '~/lib/utils';
 
 export interface CursorOptions {

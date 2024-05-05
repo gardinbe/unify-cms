@@ -68,11 +68,12 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue';
-import type { CollectionSchema, SchemaProperties } from '~shared/types';
 import { useRouter } from 'vue-router';
-import { api } from '~/lib/services';
-import SchemaForm from '~/components/Form/SchemaForm/SchemaForm.vue';
+
 import Button from '~/components/Button/Button.vue';
+import SchemaForm from '~/components/Form/SchemaForm/SchemaForm.vue';
+import { api } from '~/lib/services';
+import type { CollectionSchema, SchemaProperties } from '~shared/types';
 
 const router = useRouter();
 

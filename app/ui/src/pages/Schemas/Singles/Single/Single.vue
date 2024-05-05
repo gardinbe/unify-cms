@@ -11,9 +11,10 @@
 <script setup lang="ts">
 import { useHead } from '@unhead/vue';
 import { useRoute } from 'vue-router';
+
+import SingleSchemaForm from '~/components/Form/SchemaForm/SingleSchemaForm.vue';
 import { api } from '~/lib/services';
 import { capitalize, notFound } from '~/lib/utils';
-import SingleSchemaForm from '~/components/Form/SchemaForm/SingleSchemaForm.vue';
 
 const route = useRoute();
 

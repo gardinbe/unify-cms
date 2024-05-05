@@ -27,6 +27,7 @@
 <script setup lang="ts">
 import type { VNode } from 'vue';
 import { ref } from 'vue';
+
 import Loader from '~/components/Loader/Loader.vue';
 
 defineProps<{
