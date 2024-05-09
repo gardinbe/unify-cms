@@ -4,8 +4,9 @@
 
 .field-group {
 	display: flex;
-	align-items: flex-end;
-	gap: $spacing-sm;
+	flex-direction: column;
+
+	gap: $spacing-md;
 
 	&:not(:first-of-type) {
 		margin-top: $spacing-md;
@@ -13,6 +14,12 @@
 
 	&:not(:last-of-type) {
 		margin-bottom: $spacing-md;
+	}
+
+	&--horizontal {
+		flex-direction: row;
+		align-items: flex-end;
+		gap: $spacing-sm;
 	}
 }
 

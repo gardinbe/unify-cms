@@ -5,9 +5,9 @@ export interface SingleSchema extends BaseSchema {
 }
 
 export interface CollectionSchema extends BaseSchema {
-	item_display_property: string;
 	plural_display_name: string;
 	singular_display_name: string;
+	item_display_property: string;
 }
 
 interface BaseSchema {

@@ -60,23 +60,10 @@ const get: Handler = async (req, res) => {
 };
 
 const post: Handler = async (req, res) => {
-	// TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json
 	const schema = req.body;
 
-	if (
-		typeof schema !== 'object'
-		|| schema === null
-		|| Array.isArray(schema)
-		|| !('name' in schema)
-		|| typeof schema.name !== 'string'
-		|| schema.name === 'create'
-		|| !('display_name' in schema)
-		|| typeof schema.display_name !== 'string'
-		|| !('properties' in schema)
-		|| typeof schema.properties !== 'object'
-		|| schema.properties === null
-		|| Array.isArray(schema.properties)
-	) {
+	if (!validSingleSchema(schema)) {
 		res.status(400).json({ error: 'Invalid single schema structure' });
 		return;
 	}
@@ -116,23 +103,10 @@ const patch: Handler = async (req, res) => {
 		return;
 	}
 
-	// TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json
 	const schema = req.body;
 
-	if (
-		typeof schema !== 'object'
-		|| schema === null
-		|| Array.isArray(schema)
-		|| !('name' in schema)
-		|| typeof schema.name !== 'string'
-		|| schema.name === 'create'
-		|| !('display_name' in schema)
-		|| typeof schema.display_name !== 'string'
-		|| !('properties' in schema)
-		|| typeof schema.properties !== 'object'
-		|| schema.properties === null
-		|| Array.isArray(schema.properties)
-	) {
+	if (!validSingleSchema(schema)) {
 		res.status(400).json({ error: 'Invalid single schema structure' });
 		return;
 	}
@@ -194,3 +168,22 @@ const _delete: Handler = async (req, res) => {
 };
 
 export const internalSinglesSchemaController = { getAll, get, post, patch, delete: _delete };
+
+/**
+ * Checks if the provided object is a valid single schema.
+ * @param schema - Schema to check
+ * @returns Validity
+ */
+const validSingleSchema = (schema: unknown): schema is SingleSchema =>
+	typeof schema === 'object'
+	&& schema !== null
+	&& !Array.isArray(schema)
+	&& 'name' in schema
+	&& typeof schema.name === 'string'
+	&& schema.name !== 'create'
+	&& 'display_name' in schema
+	&& typeof schema.display_name === 'string'
+	&& 'properties' in schema
+	&& typeof schema.properties === 'object'
+	&& schema.properties !== null
+	&& !Array.isArray(schema.properties);

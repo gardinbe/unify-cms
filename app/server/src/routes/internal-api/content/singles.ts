@@ -43,7 +43,7 @@ const post: Handler = async (req, res) => {
 		return;
 	}
 
-	// TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json
 	const properties = req.body;
 
 	if (
@@ -77,7 +77,7 @@ const patch: Handler = async (req, res) => {
 		return;
 	}
 
-	// TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json
 	const properties = req.body;
 
 	if (

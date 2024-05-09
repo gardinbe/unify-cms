@@ -43,6 +43,7 @@ await runTasks([
 		description: 'Generate files and resources for the build',
 		async operation() {
 			const serverPkgJson = await import('./app/server/package.json');
+
 			const buildPkgJson = {
 				private: true,
 				name: 'unify-cms',

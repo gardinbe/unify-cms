@@ -11,11 +11,15 @@
 			>
 				[No properties]
 			</p>
+			<!--
+				TODO: using `--horizontal` here with the intention of allowing schema objects to
+				appear horizontally in the future
+			-->
 			<div
 				v-for="schemaProperty, name of schemaProperties"
 				v-else
 				:key="name"
-				class="field-group"
+				class="field-group field-group--horizontal"
 			>
 				<label>
 					<p v-if="schemaProperty.description">

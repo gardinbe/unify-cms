@@ -60,25 +60,10 @@ const get: Handler = async (req, res) => {
 };
 
 const post: Handler = async (req, res) => {
-	// TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json
 	const schema = req.body;
 
-	if (
-		typeof schema !== 'object'
-		|| schema === null
-		|| Array.isArray(schema)
-		|| !('name' in schema)
-		|| typeof schema.name !== 'string'
-		|| schema.name === 'create'
-		|| !('plural_display_name' in schema)
-		|| typeof schema.plural_display_name !== 'string'
-		|| !('singular_display_name' in schema)
-		|| typeof schema.singular_display_name !== 'string'
-		|| !('properties' in schema)
-		|| typeof schema.properties !== 'object'
-		|| schema.properties === null
-		|| Array.isArray(schema.properties)
-	) {
+	if (!validCollectionSchema(schema)) {
 		res.status(400).json({ error: 'Invalid collection schema structure' });
 		return;
 	}
@@ -118,25 +103,10 @@ const patch: Handler = async (req, res) => {
 		return;
 	}
 
-	// TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json
 	const schema = req.body;
 
-	if (
-		typeof schema !== 'object'
-		|| schema === null
-		|| Array.isArray(schema)
-		|| !('name' in schema)
-		|| typeof schema.name !== 'string'
-		|| schema.name === 'create'
-		|| !('plural_display_name' in schema)
-		|| typeof schema.plural_display_name !== 'string'
-		|| !('singular_display_name' in schema)
-		|| typeof schema.singular_display_name !== 'string'
-		|| !('properties' in schema)
-		|| typeof schema.properties !== 'object'
-		|| schema.properties === null
-		|| Array.isArray(schema.properties)
-	) {
+	if (!validCollectionSchema(schema)) {
 		res.status(400).json({ error: 'Invalid collection schema structure' });
 		return;
 	}
@@ -198,3 +168,26 @@ const _delete: Handler = async (req, res) => {
 };
 
 export const internalCollectionsSchemaController = { getAll, get, post, patch, delete: _delete };
+
+/**
+ * Checks if the provided object is a valid collection schema.
+ * @param schema - Schema to check
+ * @returns Validity
+ */
+const validCollectionSchema = (schema: unknown): schema is CollectionSchema =>
+	typeof schema === 'object'
+	&& schema !== null
+	&& !Array.isArray(schema)
+	&& 'name' in schema
+	&& typeof schema.name === 'string'
+	&& schema.name !== 'create'
+	&& 'plural_display_name' in schema
+	&& typeof schema.plural_display_name === 'string'
+	&& 'singular_display_name' in schema
+	&& typeof schema.singular_display_name === 'string'
+	&& 'item_display_property' in schema
+	&& typeof schema.item_display_property === 'string'
+	&& 'properties' in schema
+	&& typeof schema.properties === 'object'
+	&& schema.properties !== null
+	&& !Array.isArray(schema.properties);

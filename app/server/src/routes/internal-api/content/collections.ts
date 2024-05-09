@@ -83,7 +83,7 @@ const postItem: Handler = async (req, res) => {
 		return;
 	}
 
-	// TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json
 	const properties = req.body;
 
 	if (
@@ -134,7 +134,7 @@ const patchItem: Handler = async (req, res) => {
 		return;
 	}
 
-	// TODO: ensure content-type is json, and correct structure
+	// TODO: ensure content-type is json
 	const properties = req.body;
 
 	if (

@@ -26,7 +26,7 @@
 				v-for="property, index of flatProperties"
 				v-else
 				:key="index"
-				class="field-group"
+				class="field-group field-group--horizontal"
 			>
 				<label>
 					<input
