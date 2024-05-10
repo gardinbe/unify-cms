@@ -19,7 +19,7 @@ The web interface is a visual representation of the content stored on the server
     3. Run `nvm install 20.11`
     4. Run `nvm use 20.11`
 2. Install yarn: `npm i -g yarn`
-3. Navigate to the root of this project
+3. Navigate to the root of the project
 4. Install all dependencies: `yarn install`
 
 ## How to use
